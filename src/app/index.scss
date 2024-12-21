@@ -27,7 +27,9 @@
   .slides {
     overflow-x: hidden;
     overflow-y: auto;
-    scrollbar-width: 0;
+    .slide-content {
+      width: 100%;
+    }
   }
 
   .dg.main.a {

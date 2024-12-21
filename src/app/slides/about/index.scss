@@ -1,10 +1,10 @@
 .about-slide {
   .slide-content {
-    padding: 100px;
-
-    p {
-      max-width: 800px;
-    }
+    padding: 20px;
+    padding-top: 100px;
+    max-width: 800px;
+    height: 80dvh;
+    overflow: overlay;
 
     a {
       display: flex;
@@ -12,16 +12,36 @@
       gap: 5px;
       appearance: none;
       backdrop-filter: blur(20px);
+      margin-top: 20px;
       border: 2px solid var(--app-text);
       background: transparent;
       padding: 8px 20px;
+      width: fit-content;
       color: var(--app-text);
       font-weight: 700;
-      text-transform: uppercase;
-      width: fit-content;
-      text-decoration: none;
       font-size: 14px;
-      margin-top: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
     }
+
+    @include media_xxl {
+      margin-bottom: 150px;
+      height: auto;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media_sm {
+    .actions {
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+  @include media_xl {
+    font-size: 20px;
   }
 }

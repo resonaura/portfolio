@@ -1,17 +1,19 @@
 .glass-stack {
   position: relative;
-  margin: auto;
-  width: 800px;
-  height: 407px;
   animation: fade-in 1s;
+  margin: auto;
+  aspect-ratio: 1439 / 736;
+  width: 100%;
 
+  max-width: 800px;
   .stack-image {
     position: absolute;
-    border: 1px solid rgba(255,255,255,.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     background-size: 100%;
-    width: 800px;
-    height: 407px;
+
+    aspect-ratio: 1439 / 736;
+    width: 100%;
 
     &.number-1 {
       top: 0;
@@ -36,5 +38,9 @@
       z-index: 0;
       filter: blur(2px);
     }
+  }
+
+  @include media_xxl {
+    max-width: 1200px;
   }
 }

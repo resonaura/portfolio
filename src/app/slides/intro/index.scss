@@ -2,6 +2,7 @@
   background: url('/bloom.png');
   background-position: top calc((var(--offset) / 4) * -1) right;
   background-repeat: no-repeat;
+  min-height: 100dvh;
   text-align: center;
 
   h1 {
@@ -13,8 +14,8 @@
     padding-left: 30px;
 
     font-weight: 500;
-    font-size: 72px;
-    line-height: 72px;
+    font-size: 44px;
+    line-height: 44px;
 
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
   }
@@ -38,22 +39,39 @@
 
   .actions {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
     margin-top: 20px;
 
     button {
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 5px;
       appearance: none;
       backdrop-filter: blur(20px);
       border: 2px solid var(--app-text);
       background: transparent;
-      padding: 10px 20px;
+      padding: 10px 8px;
+      width: 170px;
       color: var(--app-text);
       font-weight: 700;
       text-transform: uppercase;
+    }
+  }
+  @include media_sm {
+    h1 {
+      font-size: 72px;
+      line-height: 72px;
+    }
+    .actions {
+      justify-content: center;
+      gap: 20px;
+      button {
+        padding: 10px 20px;
+        width: auto;
+      }
     }
   }
 }

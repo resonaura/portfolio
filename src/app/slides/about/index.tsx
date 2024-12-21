@@ -37,14 +37,20 @@ export function AboutSlide() {
           applications.
         </p>
 
-        <a data-cursor='block' target='_blank' href='https://cv.vynohradov.ca'>
-          <BootstrapIcon icon='box-arrow-up-right' />
-          My CV
-        </a>
-        <a data-cursor='block' href='mailto:andrii.vynohradov@gmail.com'>
-          <BootstrapIcon icon='envelope' />
-          Contact me
-        </a>
+        <div className='actions'>
+          <a
+            data-cursor='block'
+            target='_blank'
+            href='https://cv.vynohradov.ca'
+          >
+            <BootstrapIcon icon='box-arrow-up-right' />
+            My CV
+          </a>
+          <a data-cursor='block' href='mailto:andrii.vynohradov@gmail.com'>
+            <BootstrapIcon icon='envelope' />
+            Contact me
+          </a>
+        </div>
       </div>
     </Slide>
   );

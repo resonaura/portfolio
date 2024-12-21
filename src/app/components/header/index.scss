@@ -4,6 +4,8 @@
   top: 0;
   justify-content: space-between;
   align-items: center;
+  z-index: 10000;
+  transition: background-color 0.3s ease; /* Анимация изменения фона */
   box-sizing: border-box;
   background: var(--app-header-background);
   padding: 30px;
@@ -31,5 +33,14 @@
   img {
     width: 40px;
     height: 40px;
+  }
+
+  &.scrolled {
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.8);
+    @include media_lg {
+      backdrop-filter: unset;
+      background-color: unset;
+    }
   }
 }

@@ -11,14 +11,17 @@ export function Tag(props: ITag) {
   return (
     <div
       className='tag'
+      data-cursor='block'
       style={
         {
-          '--light': props.light,
+          '--light': props.light
         } as any
       }
     >
       {props.icon && <BootstrapIcon {...props.icon} />}
-      <span className='title'>{props.title}</span>
+      <span className='title' aria-hidden='true'>
+        {props.title}
+      </span>
     </div>
   );
 }
