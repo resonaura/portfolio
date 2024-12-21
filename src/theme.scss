@@ -7,13 +7,6 @@
   font-optical-sizing: auto;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #ffffff;
-    color: #213547;
-  }
-}
-
 ::-webkit-scrollbar {
   border-top: 6px transparent solid;
   border-bottom: 6px transparent solid;
