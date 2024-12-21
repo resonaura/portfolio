@@ -32,7 +32,7 @@
 
 .ipad-cursor {
   visibility: hidden;
-  @include media_lg {
+  &.show {
     visibility: visible;
   }
 }
