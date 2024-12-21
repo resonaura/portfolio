@@ -1,0 +1,40 @@
+.glass-stack {
+  position: relative;
+  margin: auto;
+  width: 800px;
+  height: 407px;
+  animation: fade-in 1s;
+
+  .stack-image {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    background-size: 100%;
+    width: 800px;
+    height: 407px;
+
+    &.number-1 {
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    &.number-2 {
+      top: 15px;
+      left: 0px;
+      transform: scale(0.98);
+      opacity: 0.8;
+      z-index: 1;
+      filter: blur(1px);
+    }
+
+    &.number-3 {
+      top: 30px;
+      left: 0px;
+      transform: scale(0.96);
+      opacity: 0.5;
+      z-index: 0;
+      filter: blur(2px);
+    }
+  }
+}

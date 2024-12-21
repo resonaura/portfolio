@@ -1,0 +1,38 @@
+:root {
+  --app-background: black;
+  --app-text: white;
+  --app-header-background: rgba(0, 0, 0, 0);
+
+  font-family: 'Raleway', sans-serif;
+  font-optical-sizing: auto;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #ffffff;
+    color: #213547;
+  }
+}
+
+::-webkit-scrollbar {
+  border-top: 6px transparent solid;
+  border-bottom: 6px transparent solid;
+  background: transparent;
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px transparent solid;
+  border-radius: 8px;
+  background: rgba(255,255,255,.2);
+  background-clip: padding-box;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 4px transparent solid;
+  background: white;
+  background-clip: padding-box;
+}

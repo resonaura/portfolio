@@ -1,0 +1,27 @@
+.about-slide {
+  .slide-content {
+    padding: 100px;
+
+    p {
+      max-width: 800px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      appearance: none;
+      backdrop-filter: blur(20px);
+      border: 2px solid var(--app-text);
+      background: transparent;
+      padding: 8px 20px;
+      color: var(--app-text);
+      font-weight: 700;
+      text-transform: uppercase;
+      width: fit-content;
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+}
