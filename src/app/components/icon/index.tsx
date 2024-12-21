@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import './index.scss';
 
 import { MouseEventHandler, useEffect, useState } from 'react';
@@ -13,7 +14,7 @@ export function BootstrapIcon({ ariaHidden = true, ...props }: IBootstrapIcon) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    let interval: number | undefined;
+    let interval: any;
     const fontLoaded = document.fonts.check('12px bootstrap-icons');
 
     if (!fontLoaded) {
