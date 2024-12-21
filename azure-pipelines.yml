@@ -1,0 +1,101 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+# Steps to set up the pipeline
+steps:
+# Install Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '22.x'
+  displayName: 'Install Node.js'
+
+# Install dependencies and build the web application
+- script: |
+    cd web
+    npm install
+    export BUILD_OUTPUT_PATH=$(Build.ArtifactStagingDirectory)/dist
+    npm run build
+  displayName: 'npm install and build web'
+
+# Publish build artifacts for the web application
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'web_dist'
+    publishLocation: 'Container'
+  displayName: 'Publish web build artifacts'
+  
+- script: |
+    echo "Contents of $(Build.ArtifactStagingDirectory)/dist (including hidden files):"
+    ls -la $(Build.ArtifactStagingDirectory)/dist
+  displayName: 'List build directory contents'
+
+- script: |
+    echo "Contents of $(Build.ArtifactStagingDirectory):"
+    ls -la -R $(Build.ArtifactStagingDirectory)
+    echo "Contents of $(System.DefaultWorkingDirectory):"
+    ls -la -R $(System.DefaultWorkingDirectory)
+  displayName: 'List directory contents'
+
+# Clean the root directory before deployment (excluding API storage and certificates folder)
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      export SSHPASS=$SFTP_PASSWORD
+      sshpass -e ssh -o StrictHostKeyChecking=no -p $SFTP_PORT $SFTP_USERNAME@$SFTP_HOST "
+        ROOT_PATH=$(echo $ROOT_PATH | sed 's|^~|\$HOME|')
+        eval ROOT_PATH=$ROOT_PATH
+        echo \"ROOT_PATH is: \$ROOT_PATH\"
+
+        find \"\$ROOT_PATH\" -mindepth 1 -maxdepth 1 ! -name 'certificates' -exec rm -rf {} +
+
+        echo \"Cleanup completed. Remaining contents:\"
+        ls -la \"\$ROOT_PATH\"
+        if [ -d \"\$ROOT_PATH/certificates\" ]; then
+          echo \"Contents of certificates directory:\"
+          ls -la \"\$ROOT_PATH/certificates\"
+        fi
+      "
+  displayName: 'Clean root directory excluding certificates'
+  env:
+    SFTP_PASSWORD: $(SFTP_PASSWORD)
+    SFTP_PORT: $(SFTP_PORT)
+    SFTP_USERNAME: $(SFTP_USERNAME)
+    SFTP_HOST: $(SFTP_HOST)
+    ROOT_PATH: $(ROOT_PATH)
+
+
+# Deploy files to the server using scp
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |      
+      # Log: Starting deployment process
+      echo "Starting deployment process..."
+      
+      # Log: Uploading web application files
+      echo "Uploading web application files..."
+      sshpass -e scp -o StrictHostKeyChecking=no -P $SFTP_PORT -r $(Build.ArtifactStagingDirectory)/dist/* $SFTP_USERNAME@$SFTP_HOST:$ROOT_PATH/
+      
+      # Log: Verifying uploaded files
+      echo "Verifying uploaded files..."
+      sshpass -e ssh -o StrictHostKeyChecking=no -p $SFTP_PORT $SFTP_USERNAME@$SFTP_HOST "ls -la $ROOT_PATH"
+      
+      # Log: Deployment process completed
+      echo "Deployment process completed."
+  displayName: 'Deploy files to server using scp'
+  env:
+    SSHPASS: $(SFTP_PASSWORD)
+    SFTP_PORT: $(SFTP_PORT)
+    SFTP_USERNAME: $(SFTP_USERNAME)
+    SFTP_HOST: $(SFTP_HOST)
+    ROOT_PATH: $(ROOT_PATH)
+
+
+
+
+
