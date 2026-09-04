@@ -79,7 +79,7 @@ export function ProjectCarousel({ images, title, fit = 'contain' }: IProjectCaro
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className='carousel-viewport'>
-        <AnimatePresence initial={false} custom={direction} mode='popLayout'>
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={page}
             custom={direction}
