@@ -134,10 +134,6 @@ export function ProjectCarousel({ images, title, fit = 'contain' }: IProjectCaro
               <ChevronRight size={18} />
             </motion.button>
 
-            <div className='carousel-counter'>
-              {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
-            </div>
-
             <div className='carousel-dots'>
               {images.map((_, idx) => (
                 <button
