@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@heroui/react';
 import { Slide } from '../../components/slide';
 import { tapScale } from '../../lib/motion';
-import { GithubIcon, LinkedinIcon, BuyMeACoffeeIcon } from '../../components/icons';
+import { GithubIcon, LinkedinIcon } from '../../components/icons';
 import './index.scss';
 
 const MotionButton = motion.create(Button);
@@ -57,16 +57,6 @@ export function AboutSlide() {
             onPress={() => window.location.href = 'mailto:andrii.vynohradov@gmail.com'}
           >
             <Mail size={16} /> Contact Me
-          </MotionButton>
-          <MotionButton
-            isIconOnly
-            variant='outline'
-            aria-label='Buy Me a Coffee'
-            whileHover={{ y: -3 }}
-            whileTap={tapScale}
-            onPress={() => window.open('https://buymeacoffee.com/resonaura', '_blank')}
-          >
-            <BuyMeACoffeeIcon size={16} />
           </MotionButton>
           <MotionButton
             isIconOnly
