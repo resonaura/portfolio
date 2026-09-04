@@ -100,6 +100,7 @@
         left: 0;
         top: 0;
         color: var(--muted);
+        opacity: 0.5;
         font-weight: 400;
       }
 
@@ -127,10 +128,50 @@
     margin-top: 4px;
   }
 
-  &.contact-slide,
   &.more-projects-slide {
+    min-height: auto;
+    padding: 80px 20px 70px 20px;
+    position: relative;
+
+    .slide-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      gap: 10px !important;
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h3 {
+      font-size: 26px;
+      margin: 2px 0 4px 0;
+
+      @include media_md {
+        font-size: 32px;
+      }
+    }
+
+    .project-tagline {
+      margin-bottom: 6px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .project-actions {
+      margin-top: 8px;
+      justify-content: center;
+    }
+  }
+
+  &.contact-slide {
     min-height: 100dvh;
     padding: 60px 20px 60px 20px;
+    position: relative;
+    overflow: hidden;
 
     .slide-content {
       display: flex !important;
@@ -140,6 +181,9 @@
       text-align: center !important;
       gap: 12px !important;
       max-width: 540px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
 
     .contact-chip {

@@ -28,7 +28,12 @@ export function IntroSlide(props: IIntroSlide) {
       style={{ '--offset': props.scrollPosition + 'px' } as any}
     >
       <ShaderArtComponent />
-      <div className='slide-content'>
+      <motion.div
+        className='slide-content'
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+      >
         <p>Hi, my name is</p>
         <h1>Andrii Vynohradov</h1>
         <h2>Systems Architect &amp; Low-Latency Engineer</h2>
@@ -43,6 +48,7 @@ export function IntroSlide(props: IIntroSlide) {
             See my projects <ArrowRight size={16} />
           </MotionButton>
           <MotionButton
+            className='more-about-btn'
             variant='outline'
             whileHover={{ y: -3 }}
             whileTap={tapScale}
@@ -51,7 +57,7 @@ export function IntroSlide(props: IIntroSlide) {
             More about me <ArrowRight size={16} />
           </MotionButton>
         </div>
-      </div>
+      </motion.div>
     </Slide>
   );
 }

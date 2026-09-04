@@ -4,17 +4,26 @@ import { Button, Chip } from '@heroui/react';
 import { Slide } from '../../components/slide';
 import { ProjectCarousel } from './components/carousel';
 import { tapScale } from '../../lib/motion';
+import { GithubIcon, LinkedinIcon } from '../../components/icons';
+import { SystemsBackground } from '../../components/systemsBackground';
 
 import './index.scss';
 
 const MotionButton = motion.create(Button);
+
+const contentMotion = {
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
+};
 
 export function ProjectSlides() {
   return (
     <>
       {/* 1. ResoStage */}
       <Slide className={'project-slide first-project-slide'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <section>
             <span className='badge-category'>Flagship Architecture • Real-Time Systems</span>
             <h3>ResoStage</h3>
@@ -52,12 +61,12 @@ export function ProjectSlides() {
               title='ResoStage'
             />
           </section>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* 2. Alchemy & AI Agent Systems */}
       <Slide className={'project-slide is-reversed'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <section>
             <span className='badge-category'>Enterprise AI Systems • IndagoDev (2024–2026)</span>
             <h3>Alchemy &amp; Agent Systems</h3>
@@ -84,15 +93,7 @@ export function ProjectSlides() {
                 variant='primary'
                 whileHover={{ y: -2 }}
                 whileTap={tapScale}
-                onPress={() => window.open('https://github.com/resonaura', '_blank')}
-              >
-                Public Showcase <ExternalLink size={14} />
-              </MotionButton>
-              <MotionButton
-                variant='outline'
-                whileHover={{ y: -2 }}
-                whileTap={tapScale}
-                onPress={() => window.open('https://cv.vynohradov.ca', '_blank')}
+                onPress={() => window.open('https://raw.githubusercontent.com/resonaura/resonaura/main/cv.pdf', '_blank')}
               >
                 Experience Details <ExternalLink size={14} />
               </MotionButton>
@@ -109,12 +110,12 @@ export function ProjectSlides() {
               title='Alchemy & AI Systems'
             />
           </section>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* 3. Snappie & Scrypted Tuya Bridge */}
       <Slide className={'project-slide'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <section>
             <span className='badge-category'>Edge Video Pipelines • Hardware Transcoding</span>
             <h3>Snappie & Tuya Bridge</h3>
@@ -161,12 +162,12 @@ export function ProjectSlides() {
               title='Snappie & Scrypted Tuya Bridge'
             />
           </section>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* 4. ResoPatch */}
       <Slide className={'project-slide is-reversed'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <section>
             <span className='badge-category'>Computational Geometry • WebAssembly</span>
             <h3>ResoPatch</h3>
@@ -207,12 +208,12 @@ export function ProjectSlides() {
               title='ResoPatch'
             />
           </section>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* 5. Scratcher & Flopster */}
       <Slide className={'project-slide'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <section>
             <span className='badge-category'>Audio DSP Plugins • Physical Modeling</span>
             <h3>Scratcher & Flopster</h3>
@@ -260,12 +261,12 @@ export function ProjectSlides() {
               title='Scratcher & Flopster'
             />
           </section>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* 6. ResoBox */}
       <Slide className={'project-slide is-reversed'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <section>
             <span className='badge-category'>Embedded Silicon • Physical Hardware</span>
             <h3>ResoBox</h3>
@@ -313,12 +314,12 @@ export function ProjectSlides() {
               fit='cover'
             />
           </section>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* 7. More Projects / GitHub Showcase */}
       <Slide className={'project-slide more-projects-slide'}>
-        <div className='slide-content'>
+        <motion.div className='slide-content' {...contentMotion}>
           <Chip size='sm' variant='secondary'>More Projects & Open Source</Chip>
           <h3>50+ More Projects on GitHub</h3>
           <p className='project-tagline'>
@@ -334,12 +335,13 @@ export function ProjectSlides() {
               View all on GitHub <ExternalLink size={16} />
             </MotionButton>
           </div>
-        </div>
+        </motion.div>
       </Slide>
 
       {/* Contact Section */}
       <Slide className={'project-slide contact-slide'}>
-        <div className='slide-content'>
+        <SystemsBackground />
+        <motion.div className='slide-content' {...contentMotion}>
           <Chip size='sm' variant='secondary' className='contact-chip'>Get in touch</Chip>
           <h3>Let's Build Systems Together</h3>
           <p className='project-tagline'>
@@ -352,7 +354,7 @@ export function ProjectSlides() {
               whileTap={tapScale}
               onPress={() => window.location.href = 'mailto:andrii.vynohradov@gmail.com'}
             >
-              Contact me <Mail size={16} />
+              <Mail size={16} /> Contact Me
             </MotionButton>
             <MotionButton
               variant='outline'
@@ -363,23 +365,27 @@ export function ProjectSlides() {
               Download CV <ExternalLink size={16} />
             </MotionButton>
             <MotionButton
+              isIconOnly
               variant='outline'
+              aria-label='LinkedIn'
               whileHover={{ y: -3 }}
               whileTap={tapScale}
               onPress={() => window.open('https://linkedin.com/in/resonaura', '_blank')}
             >
-              LinkedIn <ExternalLink size={16} />
+              <LinkedinIcon size={16} />
             </MotionButton>
             <MotionButton
+              isIconOnly
               variant='outline'
+              aria-label='GitHub'
               whileHover={{ y: -3 }}
               whileTap={tapScale}
               onPress={() => window.open('https://github.com/resonaura', '_blank')}
             >
-              GitHub <ExternalLink size={16} />
+              <GithubIcon size={16} />
             </MotionButton>
           </div>
-        </div>
+        </motion.div>
       </Slide>
     </>
   );

@@ -34,19 +34,18 @@ declare namespace JSX {
   interface IntrinsicElements {
     'shader-art': any;
     uniform: any;
-    // Extend 'script' element to include custom 'name' attribute
-    script: React.DetailedHTMLProps<
-      React.ScriptHTMLAttributes<HTMLScriptElement>,
-      HTMLScriptElement
-    > & {
-      name?: string;
-    };
+  }
+}
+
+declare namespace React.JSX {
+  interface IntrinsicElements {
+    'shader-art': any;
+    uniform: any;
   }
 }
 
 declare module '@shader-art/plugin-uniform' {
   export class UniformPlugin {
-    // Define the methods and properties if known, otherwise use 'any'
     constructor();
   }
 }

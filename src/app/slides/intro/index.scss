@@ -47,6 +47,17 @@
       max-width: 240px;
     }
 
+    .more-about-btn {
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
     @include media_sm {
       flex-direction: row;
       justify-content: center;
@@ -73,5 +84,14 @@
   h1,
   h2 {
     text-shadow: none !important;
+  }
+
+  .more-about-btn {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-color: rgba(0, 0, 0, 0.14);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
   }
 }

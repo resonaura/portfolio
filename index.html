@@ -14,15 +14,31 @@
       rel="stylesheet"
     />
 
+    <!-- Inline Theme Script: Prevent FOUC / flicker -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('vynohradov-portfolio-theme');
+          var theme = (stored === 'light' || stored === 'dark') ? stored : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Meta Information -->
     <meta name="author" content="Andrii Vynohradov" />
     <meta
       name="description"
-      content="Portfolio of Andrii Vynohradov, Full Stack Web Developer with expertise in MERN, .NET stacks, AI-powered applications, performance optimization, and mobile development."
+      content="Portfolio of Andrii Vynohradov, Systems Architect & Low-Latency Engineer with expertise in C++20 real-time audio, distributed AI runtimes, embedded DSP, and WebAssembly topologies."
     />
     <meta
       name="keywords"
-      content="Andrii Vynohradov, Full Stack Developer, MERN, .NET, React, Node.js, TypeScript, AI, Chrome Extensions, Web Development, Mobile Development, React Native, Performance Optimization, ASP.NET Core, GitHub"
+      content="Andrii Vynohradov, Systems Architect, Low-Latency C++, Real-Time Audio, DSP, Distributed AI Runtimes, Lock-Free SPSC, Embedded Firmware, WebAssembly, TypeScript, GitHub"
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#007acc" />
