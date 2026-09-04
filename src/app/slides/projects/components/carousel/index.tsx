@@ -115,9 +115,7 @@ export function ProjectCarousel({ images, title }: IProjectCarouselProps) {
             </motion.button>
 
             <div className='carousel-counter'>
-              <span>0{currentIndex + 1}</span>
-              <span className='separator'>/</span>
-              <span>0{images.length}</span>
+              {String(currentIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
             </div>
 
             <div className='carousel-dots'>

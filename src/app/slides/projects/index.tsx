@@ -62,7 +62,7 @@ export function ProjectSlides() {
       </Slide>
 
       {/* 2. Alchemy & AI Agent Systems */}
-      <Slide className={'project-slide'}>
+      <Slide className={'project-slide is-reversed'}>
         <div className='slide-content'>
           <section>
             <span className='badge-category'>Enterprise AI Systems • IndagoDev (2024–2026)</span>
@@ -171,7 +171,7 @@ export function ProjectSlides() {
       </Slide>
 
       {/* 4. ResoPatch */}
-      <Slide className={'project-slide'}>
+      <Slide className={'project-slide is-reversed'}>
         <div className='slide-content'>
           <section>
             <span className='badge-category'>Computational Geometry • WebAssembly</span>
@@ -270,7 +270,7 @@ export function ProjectSlides() {
       </Slide>
 
       {/* 6. ResoBox */}
-      <Slide className={'project-slide'}>
+      <Slide className={'project-slide is-reversed'}>
         <div className='slide-content'>
           <section>
             <span className='badge-category'>Embedded Silicon • Physical Hardware</span>

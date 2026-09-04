@@ -13,7 +13,7 @@
     font-weight: 500;
     font-size: 44px;
     line-height: 44px;
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
   }
 
   p {
@@ -31,7 +31,7 @@
     width: fit-content;
     font-weight: 500;
     font-size: 24px;
-    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 
   .actions {
@@ -52,5 +52,13 @@
       font-size: 72px;
       line-height: 72px;
     }
+  }
+}
+
+:root[data-theme='light'] #root .slides .intro-slide,
+[data-theme='light'] #root .slides .intro-slide {
+  h1,
+  h2 {
+    text-shadow: none !important;
   }
 }

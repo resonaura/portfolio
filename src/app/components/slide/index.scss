@@ -12,6 +12,15 @@
     filter: contrast(1.3) blur(10px);
     width: 100%;
     height: 100%;
-    pointer-events: none; // Чтобы фон не мешал взаимодействию с контентом
+    pointer-events: none;
+    transition: filter 0.3s ease, opacity 0.3s ease;
   }
+}
+
+:root[data-theme='light'] shader-art,
+html[data-theme='light'] shader-art,
+.light shader-art,
+[data-theme='light'] shader-art {
+  filter: invert(1) contrast(1.15) blur(10px) !important;
+  opacity: 0.9 !important;
 }
