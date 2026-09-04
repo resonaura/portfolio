@@ -12,7 +12,6 @@ export function AboutSlide() {
     <Slide className={'about-slide'}>
       <div className='slide-content'>
         <h1>About me</h1>
-        <h2>Andrii Vynohradov</h2>
         <p>
           I have over <strong>8 years</strong> of commercial development
           experience, starting my journey at <strong>14</strong>. Over the

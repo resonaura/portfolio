@@ -1,14 +1,37 @@
-.about-slide {
-  .slide-content {
-    padding: 20px;
-    padding-top: 100px;
-    max-width: 800px;
-    min-height: 80dvh;
-    overflow: overlay;
+@use '../../../medias.scss' as *;
 
-    @include media_xxl {
-      margin-bottom: 150px;
-      height: auto;
+.about-slide {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 60px 24px;
+  box-sizing: border-box;
+
+  .slide-content {
+    padding: 0;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 38px;
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--foreground);
+      margin-bottom: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--foreground);
+      margin-bottom: 16px;
+
+      strong {
+        font-weight: 600;
+      }
     }
   }
 
@@ -16,16 +39,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 28px;
     justify-content: flex-start;
   }
 
   @include media_sm {
+    .slide-content h1 {
+      font-size: 46px;
+    }
     .actions {
       gap: 16px;
     }
   }
+
   @include media_xl {
-    font-size: 20px;
+    .slide-content p {
+      font-size: 17px;
+    }
   }
 }
