@@ -80,7 +80,7 @@ export function Header() {
           whileHover={{ y: -2 }}
           whileTap={tapScale}
         >
-          <Mail size={18} />
+          <Mail size={16} />
         </motion.a>
 
         <ThemeToggle />

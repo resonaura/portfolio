@@ -16,8 +16,8 @@ export function ThemeToggle() {
       whileTap={tapScale}
       onClick={toggleTheme}
     >
-      <Sun className='icon icon-sun' size={18} />
-      <Moon className='icon icon-moon' size={18} />
+      <Sun className='icon icon-sun' size={16} />
+      <Moon className='icon icon-moon' size={16} />
       <span className='sr-only'>
         Switch to {theme === 'dark' ? 'light' : 'dark'} theme
       </span>
