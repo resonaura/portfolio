@@ -6,7 +6,6 @@ import { useHeaderContrast } from '../../hooks/useHeaderContrast';
 import { useLowPerfDevice } from '../../hooks/useLowPerfDevice';
 import { tapScale } from '../../lib/motion';
 import { ThemeToggle } from '../themeToggle';
-import { BootstrapIcon } from '../icon';
 import './index.scss';
 
 const HEADER_HEIGHT = 100;
@@ -46,30 +45,6 @@ export function Header() {
       </motion.button>
 
       <div className='actions'>
-        <motion.a
-          className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
-          href='https://linkedin.com/in/resonaura'
-          target='_blank'
-          rel='noreferrer'
-          aria-label='LinkedIn'
-          whileHover={{ y: -2 }}
-          whileTap={tapScale}
-        >
-          <BootstrapIcon icon='linkedin' />
-        </motion.a>
-
-        <motion.a
-          className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
-          href='https://github.com/resonaura'
-          target='_blank'
-          rel='noreferrer'
-          aria-label='GitHub'
-          whileHover={{ y: -2 }}
-          whileTap={tapScale}
-        >
-          <BootstrapIcon icon='github' />
-        </motion.a>
-
         <motion.a
           className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
           href='mailto:andrii.vynohradov@gmail.com'

@@ -7,7 +7,6 @@ import { UniformPlugin } from '@shader-art/plugin-uniform';
 import App from './app/index.tsx';
 
 import './heroui.css';
-import 'bootstrap-icons/font/bootstrap-icons.scss';
 import './theme.scss';
 
 ShaderArt.register([() => new UniformPlugin()]);

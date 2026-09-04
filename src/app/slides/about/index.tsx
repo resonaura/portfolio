@@ -39,7 +39,7 @@ export function AboutSlide() {
             variant='primary'
             whileHover={{ y: -3 }}
             whileTap={tapScale}
-            onPress={() => window.open('https://github.com/resonaura/resonaura/blob/main/cv.pdf', '_blank')}
+            onPress={() => window.open('https://raw.githubusercontent.com/resonaura/resonaura/main/cv.pdf', '_blank')}
           >
             My CV <ArrowRight size={16} />
           </MotionButton>

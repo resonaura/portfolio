@@ -1,9 +1,8 @@
-import { ExternalLink, Mail } from 'lucide-react';
+import { ExternalLink, Mail, Lock } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button, Chip } from '@heroui/react';
 import { Slide } from '../../components/slide';
 import { ProjectCarousel } from './components/carousel';
-import { BootstrapIcon } from '../../components/icon';
 import { tapScale } from '../../lib/motion';
 
 import './index.scss';
@@ -37,14 +36,9 @@ export function ProjectSlides() {
               <Chip size='sm' variant='secondary'>Electron / React 19</Chip>
             </div>
             <div className='project-actions'>
-              <MotionButton
-                variant='outline'
-                whileHover={{ y: -2 }}
-                whileTap={tapScale}
-                onPress={() => window.open('https://github.com/resonaura', '_blank')}
-              >
-                Private Codebase <ExternalLink size={14} />
-              </MotionButton>
+              <Chip size='md' variant='secondary' className='cursor-default opacity-85'>
+                <Lock size={13} style={{ display: 'inline', marginRight: 6 }} /> Private Codebase
+              </Chip>
             </div>
           </section>
 
@@ -146,7 +140,7 @@ export function ProjectSlides() {
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura/scrypted-tuya', '_blank')}
               >
-                GitHub Repo <BootstrapIcon icon='github' />
+                GitHub Repo <ExternalLink size={14} />
               </MotionButton>
               <MotionButton
                 variant='outline'
@@ -199,7 +193,7 @@ export function ProjectSlides() {
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura/resopatch', '_blank')}
               >
-                GitHub Repo <BootstrapIcon icon='github' />
+                GitHub Repo <ExternalLink size={14} />
               </MotionButton>
             </div>
           </section>
@@ -244,7 +238,7 @@ export function ProjectSlides() {
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura/scratcher', '_blank')}
               >
-                Scratcher <BootstrapIcon icon='github' />
+                Scratcher <ExternalLink size={14} />
               </MotionButton>
               <MotionButton
                 variant='outline'
@@ -252,7 +246,7 @@ export function ProjectSlides() {
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura/flopster', '_blank')}
               >
-                Flopster <BootstrapIcon icon='github' />
+                Flopster <ExternalLink size={14} />
               </MotionButton>
             </div>
           </section>
@@ -297,7 +291,7 @@ export function ProjectSlides() {
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura/resobox-core', '_blank')}
               >
-                resobox-core <BootstrapIcon icon='github' />
+                resobox-core <ExternalLink size={14} />
               </MotionButton>
               <MotionButton
                 variant='outline'
@@ -305,7 +299,7 @@ export function ProjectSlides() {
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura/resobox-ui', '_blank')}
               >
-                resobox-ui <BootstrapIcon icon='github' />
+                resobox-ui <ExternalLink size={14} />
               </MotionButton>
             </div>
           </section>
@@ -316,8 +310,30 @@ export function ProjectSlides() {
                 '/projects/resobox/hardware.jpg'
               ]}
               title='ResoBox'
+              fit='cover'
             />
           </section>
+        </div>
+      </Slide>
+
+      {/* 7. More Projects / GitHub Showcase */}
+      <Slide className={'project-slide more-projects-slide'}>
+        <div className='slide-content'>
+          <Chip size='sm' variant='secondary'>More Projects & Open Source</Chip>
+          <h3>50+ More Projects on GitHub</h3>
+          <p className='project-tagline'>
+            Explore the complete open-source archive: audio plugins, reverse-engineered IoT protocols, embedded firmware, and distributed systems.
+          </p>
+          <div className='project-actions'>
+            <MotionButton
+              variant='primary'
+              whileHover={{ y: -3 }}
+              whileTap={tapScale}
+              onPress={() => window.open('https://github.com/resonaura?tab=repositories', '_blank')}
+            >
+              View all on GitHub <ExternalLink size={16} />
+            </MotionButton>
+          </div>
         </div>
       </Slide>
 
@@ -342,9 +358,25 @@ export function ProjectSlides() {
               variant='outline'
               whileHover={{ y: -3 }}
               whileTap={tapScale}
-              onPress={() => window.open('https://github.com/resonaura/resonaura/blob/main/cv.pdf', '_blank')}
+              onPress={() => window.open('https://raw.githubusercontent.com/resonaura/resonaura/main/cv.pdf', '_blank')}
             >
               Download CV <ExternalLink size={16} />
+            </MotionButton>
+            <MotionButton
+              variant='outline'
+              whileHover={{ y: -3 }}
+              whileTap={tapScale}
+              onPress={() => window.open('https://linkedin.com/in/resonaura', '_blank')}
+            >
+              LinkedIn <ExternalLink size={16} />
+            </MotionButton>
+            <MotionButton
+              variant='outline'
+              whileHover={{ y: -3 }}
+              whileTap={tapScale}
+              onPress={() => window.open('https://github.com/resonaura', '_blank')}
+            >
+              GitHub <ExternalLink size={16} />
             </MotionButton>
           </div>
         </div>

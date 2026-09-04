@@ -7,9 +7,10 @@ import './index.scss';
 export interface IProjectCarouselProps {
   images: string[];
   title?: string;
+  fit?: 'contain' | 'cover';
 }
 
-export function ProjectCarousel({ images, title }: IProjectCarouselProps) {
+export function ProjectCarousel({ images, title, fit = 'contain' }: IProjectCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: 0.35 });
   const [isHovered, setIsHovered] = useState(false);
@@ -73,7 +74,7 @@ export function ProjectCarousel({ images, title }: IProjectCarouselProps) {
   return (
     <div
       ref={containerRef}
-      className='project-carousel'
+      className={`project-carousel ${fit === 'cover' ? 'is-cover' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
