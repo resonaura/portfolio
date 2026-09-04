@@ -61,37 +61,46 @@ export function ProjectSlides() {
         </div>
       </Slide>
 
-      {/* 2. Indago AI Platform */}
+      {/* 2. Alchemy & AI Agent Systems */}
       <Slide className={'project-slide'}>
         <div className='slide-content'>
           <section>
-            <span className='badge-category'>Distributed Platforms • AI Agent Infrastructure</span>
-            <h3>Indago AI Platform</h3>
+            <span className='badge-category'>Enterprise AI Systems • IndagoDev (2024–2026)</span>
+            <h3>Alchemy &amp; Agent Systems</h3>
             <p className='project-tagline'>
-              Distributed multi-agent orchestration infrastructure and local high-throughput LLM inference execution runtime.
+              Multi-model LLM workbench, autonomous agent OS, and sandboxed execution infrastructure engineered at IndagoDev.
             </p>
             <ul className='project-bullets'>
-              <li><strong>Microservices Architecture</strong>: Decomposed legacy monolith into event-driven NestJS services, supporting 1,000+ parallel AI agents.</li>
-              <li><strong>Latency Optimization</strong>: Reduced p95 gateway latency from 450ms to 315ms under high concurrent agent workloads.</li>
-              <li><strong>Hybrid RAG Pipeline</strong>: Combines pgvector semantic search with structured metadata pre-filtering, cutting token overhead by ~40%.</li>
-              <li><strong>Bare-Metal S3 Cluster</strong>: Distributed Linux MinIO storage cluster eliminating 70% of cloud data storage and egress expenses.</li>
+              <li><strong>Alchemy (Public Workbench)</strong>: Multi-model prompt studio and browser extension streaming responses from Claude, OpenAI, and local Ollama models.</li>
+              <li><strong>Autonomous Agent OS &amp; Computer Use</strong>: Multi-agent execution runtime supporting complex generation workflows, VM sandboxing, OS automation, and cross-agent social feeds.</li>
+              <li><strong>High-Density Agent Hosting</strong>: Scaled cloud hosting infrastructure for autonomous Hermes / OpenClaw agents with WebSocket daemon tunnels and self-healing watchdogs.</li>
+              <li><strong>Declarative Media Pipelines</strong>: AI photo/video generation studio and custom timeline video editor built with custom declarative FFmpeg rendering engine.</li>
             </ul>
             <div className='tags'>
               <Chip size='sm' variant='secondary'>NestJS / Fastify</Chip>
-              <Chip size='sm' variant='secondary'>Python (FastAPI)</Chip>
+              <Chip size='sm' variant='secondary'>TypeScript / Python</Chip>
+              <Chip size='sm' variant='secondary'>VM Sandboxing</Chip>
+              <Chip size='sm' variant='secondary'>Daemon Tunnels</Chip>
               <Chip size='sm' variant='secondary'>vLLM / Ollama</Chip>
-              <Chip size='sm' variant='secondary'>LangGraph</Chip>
-              <Chip size='sm' variant='secondary'>pgvector / PostgreSQL</Chip>
-              <Chip size='sm' variant='secondary'>Redis Streams</Chip>
+              <Chip size='sm' variant='secondary'>FFmpeg Engine</Chip>
+              <Chip size='sm' variant='secondary'>WireGuard Mesh</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
-                variant='outline'
+                variant='primary'
                 whileHover={{ y: -2 }}
                 whileTap={tapScale}
                 onPress={() => window.open('https://github.com/resonaura', '_blank')}
               >
-                IndagoDev System <ExternalLink size={14} />
+                Public Showcase <ExternalLink size={14} />
+              </MotionButton>
+              <MotionButton
+                variant='outline'
+                whileHover={{ y: -2 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://cv.vynohradov.ca', '_blank')}
+              >
+                Experience Details <ExternalLink size={14} />
               </MotionButton>
             </div>
           </section>
@@ -103,7 +112,7 @@ export function ProjectSlides() {
                 '/projects/alchemy/editor.png',
                 '/projects/alchemy/preview.png'
               ]}
-              title='Indago AI Platform'
+              title='Alchemy & AI Systems'
             />
           </section>
         </div>
