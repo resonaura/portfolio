@@ -5,6 +5,7 @@ import BlurEffect from 'react-progressive-blur';
 import { useHeaderContrast } from '../../hooks/useHeaderContrast';
 import { useLowPerfDevice } from '../../hooks/useLowPerfDevice';
 import { tapScale } from '../../lib/motion';
+import { BuyMeACoffeeIcon } from '../icons';
 import { ThemeToggle } from '../themeToggle';
 import './index.scss';
 
@@ -45,6 +46,18 @@ export function Header() {
       </motion.button>
 
       <div className='actions'>
+        <motion.a
+          className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
+          href='https://buymeacoffee.com/resonaura'
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label='Buy Me a Coffee'
+          whileHover={{ y: -2 }}
+          whileTap={tapScale}
+        >
+          <BuyMeACoffeeIcon size={18} />
+        </motion.a>
+
         <motion.a
           className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
           href='mailto:andrii.vynohradov@gmail.com'
