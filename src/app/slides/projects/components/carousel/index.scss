@@ -73,7 +73,7 @@
     }
 
     &.prev {
-      left: -20px;
+      left: 8px;
 
       @include media_md {
         left: -22px;
@@ -81,7 +81,7 @@
     }
 
     &.next {
-      right: -20px;
+      right: 8px;
 
       @include media_md {
         right: -22px;

@@ -42,7 +42,7 @@ export function Header() {
         whileTap={tapScale}
         onClick={scrollToTop}
       >
-        <img src='/av.svg' width={38} height={38} alt='Andrii Vynohradov' />
+        <img src='/av.svg' width={28} height={28} alt='Andrii Vynohradov' />
       </motion.button>
 
       <div className='actions'>

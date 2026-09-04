@@ -6,18 +6,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 32px 60px 32px;
+  padding: 80px 20px 48px 20px;
   box-sizing: border-box;
   position: relative;
+
+  @include media_md {
+    padding: 100px 32px 60px 32px;
+  }
 
   .slide-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 36px;
+    gap: 32px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
+    @include media_md {
+      gap: 36px;
+    }
 
     section {
       width: 100%;
@@ -47,24 +55,34 @@
 
   h3 {
     font-weight: 700;
-    font-size: 34px;
-    line-height: 1.15;
+    font-size: 28px;
+    line-height: 1.2;
     letter-spacing: -0.02em;
     color: var(--foreground);
     margin: 4px 0 10px 0;
+
+    @include media_md {
+      font-size: 34px;
+      line-height: 1.15;
+    }
   }
 
   .project-tagline {
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.5;
     color: var(--muted);
     max-width: 540px;
     margin-bottom: 14px;
+
+    @include media_md {
+      font-size: 15px;
+    }
   }
 
   .project-bullets {
+    list-style: none;
     margin: 0;
-    padding-left: 18px;
+    padding: 0;
     color: var(--foreground);
     font-size: 13.5px;
     line-height: 1.55;
@@ -72,7 +90,18 @@
     max-width: 560px;
 
     li {
+      position: relative;
+      padding-left: 20px;
       margin-bottom: 6px;
+
+      &::before {
+        content: '—';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--muted);
+        font-weight: 400;
+      }
 
       strong {
         color: var(--foreground);
@@ -96,6 +125,47 @@
     gap: 12px;
     align-items: center;
     margin-top: 4px;
+  }
+
+  &.contact-slide {
+    min-height: 100dvh;
+    padding: 60px 20px 60px 20px;
+
+    .slide-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      gap: 12px !important;
+      max-width: 540px;
+    }
+
+    .contact-chip {
+      margin-bottom: 4px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin: 2px 0 6px 0;
+
+      @include media_md {
+        font-size: 34px;
+      }
+    }
+
+    .project-tagline {
+      margin-bottom: 6px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .project-actions {
+      margin-top: 10px;
+      justify-content: center;
+    }
   }
 
   @include media_lg {

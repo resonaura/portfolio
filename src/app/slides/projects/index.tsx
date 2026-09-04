@@ -323,13 +323,13 @@ export function ProjectSlides() {
 
       {/* Contact Section */}
       <Slide className={'project-slide contact-slide'}>
-        <div className='slide-content' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-          <span className='badge-category'>Get in Touch</span>
+        <div className='slide-content'>
+          <Chip size='sm' variant='secondary' className='contact-chip'>Get in touch</Chip>
           <h3>Let's Build Systems Together</h3>
-          <p className='project-tagline' style={{ maxWidth: '520px', textAlign: 'center' }}>
+          <p className='project-tagline'>
             Available for Lead Backend, Systems Architecture, Low-Latency C++, and AI Platform roles in Canada & US Remote.
           </p>
-          <div className='project-actions' style={{ marginTop: '16px', justifyContent: 'center' }}>
+          <div className='project-actions'>
             <MotionButton
               variant='primary'
               whileHover={{ y: -3 }}
@@ -342,7 +342,7 @@ export function ProjectSlides() {
               variant='outline'
               whileHover={{ y: -3 }}
               whileTap={tapScale}
-              onPress={() => window.open('https://cv.vynohradov.ca', '_blank')}
+              onPress={() => window.open('https://github.com/resonaura/resonaura/blob/main/cv.pdf', '_blank')}
             >
               Download CV <ExternalLink size={16} />
             </MotionButton>

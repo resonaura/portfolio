@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { tapScale } from '../../../../lib/motion';
 import './index.scss';
@@ -10,21 +10,35 @@ export interface IProjectCarouselProps {
 }
 
 export function ProjectCarousel({ images, title }: IProjectCarouselProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { amount: 0.35 });
+  const [isHovered, setIsHovered] = useState(false);
   const [[page, direction], setPage] = useState<[number, number]>([0, 0]);
 
   if (!images || images.length === 0) return null;
 
-  const currentIndex = Math.abs(page % images.length);
-  const isMultiple = images.length > 1;
+  const len = images.length;
+  const currentIndex = ((page % len) + len) % len;
+  const isMultiple = len > 1;
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
 
   const jumpTo = (index: number) => {
+    if (index === currentIndex) return;
     const dir = index > currentIndex ? 1 : -1;
     setPage([page + (index - currentIndex), dir]);
   };
+
+  // Autoplay when in viewport, paused when hovered
+  useEffect(() => {
+    if (!isMultiple || !isInView || isHovered) return;
+    const timer = setInterval(() => {
+      paginate(1);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [isMultiple, isInView, isHovered, page]);
 
   const variants = {
     enter: (direction: number) => ({
@@ -57,9 +71,14 @@ export function ProjectCarousel({ images, title }: IProjectCarouselProps) {
   };
 
   return (
-    <div className='project-carousel'>
+    <div
+      ref={containerRef}
+      className='project-carousel'
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className='carousel-viewport'>
-        <AnimatePresence initial={false} custom={direction} mode='wait'>
+        <AnimatePresence initial={false} custom={direction} mode='popLayout'>
           <motion.div
             key={page}
             custom={direction}
