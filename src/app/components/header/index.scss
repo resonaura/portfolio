@@ -89,44 +89,31 @@
     display: flex;
     position: relative;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     z-index: 20;
     transition: color 0.18s ease;
     color: var(--header-fg);
 
-    .action-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      border-radius: 8px;
-      width: 36px;
-      height: 36px;
-      color: var(--header-fg);
-      text-decoration: none;
-      font-size: 16px;
-      line-height: 1;
-      transition: all 0.15s ease;
+    * {
+      transition: color 0.18s ease;
+      color: var(--header-fg) !important;
+    }
 
-      .bi {
-        font-size: 16px;
-        line-height: 1;
-      }
+    a,
+    button {
+      transition: all 0.1s ease;
+    }
 
-      svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
+    a:hover,
+    button:hover {
+      background: rgba(255, 255, 255, 0.1);
     }
   }
 
   &[data-bg='light'] .actions {
-    .action-link:hover {
-      background: rgba(0, 0, 0, 0.08);
+    a:hover,
+    button:hover {
+      background: rgba(0, 0, 0, 0.1) !important;
     }
   }
 }

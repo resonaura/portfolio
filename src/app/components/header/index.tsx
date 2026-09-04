@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { buttonVariants } from '@heroui/react';
 import { Mail } from 'lucide-react';
 import BlurEffect from 'react-progressive-blur';
 import { useHeaderContrast } from '../../hooks/useHeaderContrast';
@@ -37,7 +38,6 @@ export function Header() {
       <motion.button
         type='button'
         className='logo'
-        
         whileHover={{ y: -2 }}
         whileTap={tapScale}
         onClick={scrollToTop}
@@ -47,8 +47,7 @@ export function Header() {
 
       <div className='actions'>
         <motion.a
-          
-          className='action-link'
+          className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
           href='https://linkedin.com/in/resonaura'
           target='_blank'
           rel='noreferrer'
@@ -60,8 +59,7 @@ export function Header() {
         </motion.a>
 
         <motion.a
-          
-          className='action-link'
+          className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
           href='https://github.com/resonaura'
           target='_blank'
           rel='noreferrer'
@@ -73,14 +71,13 @@ export function Header() {
         </motion.a>
 
         <motion.a
-          
-          className='action-link'
+          className={buttonVariants({ variant: 'ghost', isIconOnly: true })}
           href='mailto:andrii.vynohradov@gmail.com'
           aria-label='Email Andrii'
           whileHover={{ y: -2 }}
           whileTap={tapScale}
         >
-          <Mail size={16} />
+          <Mail size={18} />
         </motion.a>
 
         <ThemeToggle />

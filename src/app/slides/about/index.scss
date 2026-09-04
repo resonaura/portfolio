@@ -6,24 +6,6 @@
     min-height: 80dvh;
     overflow: overlay;
 
-    a {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      appearance: none;
-      backdrop-filter: blur(20px);
-      margin-top: 20px;
-      border: 2px solid var(--app-text);
-      background: transparent;
-      padding: 8px 20px;
-      width: fit-content;
-      color: var(--app-text);
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
     @include media_xxl {
       margin-bottom: 150px;
       height: auto;
@@ -32,13 +14,15 @@
 
   .actions {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+    justify-content: flex-start;
   }
 
   @include media_sm {
     .actions {
-      justify-content: center;
-      gap: 20px;
+      gap: 16px;
     }
   }
   @include media_xl {

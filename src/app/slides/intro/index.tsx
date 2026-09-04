@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Button } from '@heroui/react';
 import { Slide } from '../../components/slide';
 import ShaderArtComponent from '../../components/water';
+import { tapScale } from '../../lib/motion';
 
 import './index.scss';
+
+const MotionButton = motion.create(Button);
 
 export interface IIntroSlide {
   scrollPosition: number;
@@ -29,18 +34,22 @@ export function IntroSlide(props: IIntroSlide) {
         <h2>I'm a fullstack software developer</h2>
 
         <div className='actions'>
-          <button
-            className='btn-primary'
-            onClick={() => handleScrollTo('first-project-slide')}
+          <MotionButton
+            variant='primary'
+            whileHover={{ y: -3 }}
+            whileTap={tapScale}
+            onPress={() => handleScrollTo('first-project-slide')}
           >
             See my projects <ArrowRight size={16} />
-          </button>
-          <button
-            className='btn-outline'
-            onClick={() => handleScrollTo('about-slide')}
+          </MotionButton>
+          <MotionButton
+            variant='outline'
+            whileHover={{ y: -3 }}
+            whileTap={tapScale}
+            onPress={() => handleScrollTo('about-slide')}
           >
             More about me <ArrowRight size={16} />
-          </button>
+          </MotionButton>
         </div>
       </div>
     </Slide>

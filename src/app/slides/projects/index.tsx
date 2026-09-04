@@ -1,9 +1,14 @@
-import { BootstrapIcon } from '../../components/icon';
+import { Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Button } from '@heroui/react';
 import { Slide } from '../../components/slide';
 import { GlassStack } from './components/stack';
 import { Tag } from './components/tag';
+import { tapScale } from '../../lib/motion';
 
 import './index.scss';
+
+const MotionButton = motion.create(Button);
 
 export function ProjectSlides() {
   return (
@@ -64,10 +69,11 @@ export function ProjectSlides() {
                 title={'TypeScript'}
                 light='#4a45f5'
               />
-              <Tag icon={{ icon: 'plug' }} title={'WebSockets'} light='cyan' />
-              <Tag icon={{ icon: 'filetype-py' }} title={'NodeJS'} />
-              <Tag icon={{ icon: 'easel' }} title={'Canvas'} />
-              <Tag icon={{ icon: 'brush' }} title={'UI / UX'} />
+              <Tag
+                icon={{ icon: 'bezier2' }}
+                title={'Canvas API'}
+                light='rgb(41 247 186)'
+              />
             </div>
           </section>
 
@@ -75,8 +81,8 @@ export function ProjectSlides() {
             <GlassStack
               images={[
                 '/projects/kidcanvas/1.png',
-                '/projects/kidcanvas/1.png',
-                '/projects/kidcanvas/1.png'
+                '/projects/kidcanvas/2.png',
+                '/projects/kidcanvas/3.png'
               ]}
             />
           </section>
@@ -87,16 +93,23 @@ export function ProjectSlides() {
           <section>
             <h3>UniVent</h3>
             <div className='tags'>
-              <Tag icon={{ icon: 'phone' }} title={'Mobile App Development'} />
-              <Tag icon={{ icon: 'rocket-takeoff' }} title={'React Native'} />
+              <Tag
+                icon={{ icon: 'code-slash' }}
+                title={'Frontend development'}
+              />
+              <Tag icon={{ icon: 'hdd-rack' }} title={'Backend development'} />
+              <Tag
+                icon={{ icon: 'phone' }}
+                title={'React Native'}
+                light='#4a45f5'
+              />
               <Tag
                 icon={{ icon: 'braces' }}
                 title={'TypeScript'}
-                light='#1B92E8'
+                light='#4a45f5'
               />
-              <Tag icon={{ icon: 'cup-hot' }} title={'Java'} light='#4a45f5' />
-              <Tag icon={{ icon: 'android' }} title={'Kotlin'} />
-              <Tag icon={{ icon: 'apple' }} title={'Swift'} />
+              <Tag icon={{ icon: 'apple' }} title={'iOS'} />
+              <Tag icon={{ icon: 'android2' }} title={'Android'} light='green' />
             </div>
           </section>
 
@@ -110,11 +123,15 @@ export function ProjectSlides() {
             />
           </section>
 
-          <section>
-            <a  href='mailto:andrii.vynohradov@gmail.com'>
-              <BootstrapIcon icon='envelope' />
-              Contact me
-            </a>
+          <section style={{ marginTop: '40px' }}>
+            <MotionButton
+              variant='primary'
+              whileHover={{ y: -3 }}
+              whileTap={tapScale}
+              onPress={() => window.location.href = 'mailto:andrii.vynohradov@gmail.com'}
+            >
+              Contact me <Mail size={16} />
+            </MotionButton>
           </section>
         </div>
       </Slide>

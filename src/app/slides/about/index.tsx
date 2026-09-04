@@ -1,6 +1,11 @@
-import { ExternalLink, Mail } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Button } from '@heroui/react';
 import { Slide } from '../../components/slide';
+import { tapScale } from '../../lib/motion';
 import './index.scss';
+
+const MotionButton = motion.create(Button);
 
 export function AboutSlide() {
   return (
@@ -31,17 +36,22 @@ export function AboutSlide() {
         </p>
 
         <div className='actions'>
-          <a
-            className='btn-primary'
-            target='_blank'
-            rel='noreferrer'
-            href='https://cv.vynohradov.ca'
+          <MotionButton
+            variant='primary'
+            whileHover={{ y: -3 }}
+            whileTap={tapScale}
+            onPress={() => window.open('https://cv.vynohradov.ca', '_blank')}
           >
-            My CV <ExternalLink size={16} />
-          </a>
-          <a className='btn-outline' href='mailto:andrii.vynohradov@gmail.com'>
+            My CV <ArrowRight size={16} />
+          </MotionButton>
+          <MotionButton
+            variant='outline'
+            whileHover={{ y: -3 }}
+            whileTap={tapScale}
+            onPress={() => window.location.href = 'mailto:andrii.vynohradov@gmail.com'}
+          >
             Contact me <Mail size={16} />
-          </a>
+          </MotionButton>
         </div>
       </div>
     </Slide>

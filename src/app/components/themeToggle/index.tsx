@@ -1,26 +1,29 @@
 import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Button } from '@heroui/react';
 import { useTheme } from '../../providers/theme/context';
 import { tapScale } from '../../lib/motion';
 import './index.scss';
+
+const MotionButton = motion.create(Button);
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <motion.button
-      type='button'
+    <MotionButton
+      isIconOnly
+      variant='ghost'
       className='theme-toggle'
-      
       aria-label='Toggle theme'
       whileTap={tapScale}
-      onClick={toggleTheme}
+      onPress={toggleTheme}
     >
-      <Sun className='icon icon-sun' size={16} />
-      <Moon className='icon icon-moon' size={16} />
+      <Sun className='icon icon-sun' size={18} />
+      <Moon className='icon icon-moon' size={18} />
       <span className='sr-only'>
         Switch to {theme === 'dark' ? 'light' : 'dark'} theme
       </span>
-    </motion.button>
+    </MotionButton>
   );
 }
