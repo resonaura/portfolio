@@ -5,6 +5,7 @@ import { AboutSlide } from './slides/about';
 import { useEffect, useState } from 'react';
 import { ProjectSlides } from './slides/projects';
 import { IpadProvider } from './components/ipadProvider';
+import { ThemeProvider } from './providers/theme';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -22,14 +23,16 @@ function App() {
   }, []);
 
   return (
-    <IpadProvider>
-      <Header />
-      <div className='slides'>
-        <IntroSlide {...{ scrollPosition }} />
-        <AboutSlide />
-        <ProjectSlides />
-      </div>
-    </IpadProvider>
+    <ThemeProvider>
+      <IpadProvider>
+        <Header />
+        <div className='slides'>
+          <IntroSlide {...{ scrollPosition }} />
+          <AboutSlide />
+          <ProjectSlides />
+        </div>
+      </IpadProvider>
+    </ThemeProvider>
   );
 }
 

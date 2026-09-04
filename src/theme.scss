@@ -1,10 +1,47 @@
-:root {
-  --app-background: black;
-  --app-text: white;
+:root,
+[data-theme='dark'] {
+  --app-background: #000000;
+  --app-text: #f5f5f5;
+  --app-text-muted: rgba(245, 245, 245, 0.65);
   --app-header-background: rgba(0, 0, 0, 0);
+  --app-header-background-scrolled: rgba(0, 0, 0, 0.85);
+  --app-surface: rgba(255, 255, 255, 0.06);
+  --app-surface-strong: rgba(255, 255, 255, 0.09);
+  --app-border: rgba(255, 255, 255, 0.12);
+  --app-scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --app-scrollbar-thumb-hover: #ffffff;
+}
 
+[data-theme='light'] {
+  --app-background: #ffffff;
+  --app-text: #17171a;
+  --app-text-muted: rgba(23, 23, 26, 0.65);
+  --app-header-background: rgba(255, 255, 255, 0);
+  --app-header-background-scrolled: rgba(255, 255, 255, 0.85);
+  --app-surface: rgba(0, 0, 0, 0.04);
+  --app-surface-strong: rgba(0, 0, 0, 0.06);
+  --app-border: rgba(0, 0, 0, 0.12);
+  --app-scrollbar-thumb: rgba(0, 0, 0, 0.2);
+  --app-scrollbar-thumb-hover: #17171a;
+}
+
+:root {
   font-family: 'Raleway', sans-serif;
   font-optical-sizing: auto;
+}
+
+html {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  background-color: var(--app-background);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--app-background);
+  color: var(--app-text);
 }
 
 ::-webkit-scrollbar {
@@ -18,7 +55,7 @@
 ::-webkit-scrollbar-thumb {
   border: 4px transparent solid;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--app-scrollbar-thumb);
   background-clip: padding-box;
   min-width: 50px;
   min-height: 50px;
@@ -26,6 +63,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   border: 4px transparent solid;
-  background: white;
+  background: var(--app-scrollbar-thumb-hover);
   background-clip: padding-box;
 }

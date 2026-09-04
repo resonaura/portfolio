@@ -1,40 +1,90 @@
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail } from 'lucide-react';
+import BlurEffect from 'react-progressive-blur';
+import { useHeaderContrast } from '../../hooks/useHeaderContrast';
+import { useLowPerfDevice } from '../../hooks/useLowPerfDevice';
+import { tapScale } from '../../lib/motion';
+import { ThemeToggle } from '../themeToggle';
 import { BootstrapIcon } from '../icon';
 import './index.scss';
-import { Link } from './link';
+
+const HEADER_HEIGHT = 100;
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const isLowPerfDevice = useLowPerfDevice();
+  const contrast = useHeaderContrast(HEADER_HEIGHT + 4);
 
-  const checkIsScrolledEvent = () => {
-    if (window.scrollY > 10) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    document.addEventListener('scroll', checkIsScrolledEvent);
-    return () => {
-      document.removeEventListener('scroll', checkIsScrolledEvent);
-    };
-  }, []);
-
   return (
-    <header className={isScrolled ? 'scrolled' : undefined}>
-      <img src='/av.svg' />
+    <motion.header
+      className={isLowPerfDevice ? 'no-blur' : undefined}
+      data-bg={contrast}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {!isLowPerfDevice && (
+        <>
+          <BlurEffect position='top' intensity={60} className='header-blur' />
+          <div className='header-tint header-tint--dark' aria-hidden='true' />
+          <div className='header-tint header-tint--light' aria-hidden='true' />
+        </>
+      )}
 
-      <div className='links'>
-        <Link
-          icon={<BootstrapIcon icon='linkedin' />}
-          link='https://linkedin.com/in/resonaura'
-        />
-        <Link
-          icon={<BootstrapIcon icon='github' />}
-          link='https://github.com/resonaura'
-        />
+      <motion.button
+        type='button'
+        className='logo'
+        data-cursor='block'
+        whileHover={{ y: -2 }}
+        whileTap={tapScale}
+        onClick={scrollToTop}
+      >
+        <img src='/av.svg' width={38} height={38} alt='Andrii Vynohradov' />
+      </motion.button>
+
+      <div className='actions'>
+        <motion.a
+          data-cursor='block'
+          className='action-link'
+          href='https://linkedin.com/in/resonaura'
+          target='_blank'
+          rel='noreferrer'
+          aria-label='LinkedIn'
+          whileHover={{ y: -2 }}
+          whileTap={tapScale}
+        >
+          <BootstrapIcon icon='linkedin' />
+        </motion.a>
+
+        <motion.a
+          data-cursor='block'
+          className='action-link'
+          href='https://github.com/resonaura'
+          target='_blank'
+          rel='noreferrer'
+          aria-label='GitHub'
+          whileHover={{ y: -2 }}
+          whileTap={tapScale}
+        >
+          <BootstrapIcon icon='github' />
+        </motion.a>
+
+        <motion.a
+          data-cursor='block'
+          className='action-link'
+          href='mailto:andrii.vynohradov@gmail.com'
+          aria-label='Email Andrii'
+          whileHover={{ y: -2 }}
+          whileTap={tapScale}
+        >
+          <Mail size={18} />
+        </motion.a>
+
+        <ThemeToggle />
       </div>
-    </header>
+    </motion.header>
   );
 }
