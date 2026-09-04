@@ -31,7 +31,7 @@ export function IntroSlide(props: IIntroSlide) {
       <div className='slide-content'>
         <p>Hi, my name is</p>
         <h1>Andrii Vynohradov</h1>
-        <h2>I'm a fullstack software developer</h2>
+        <h2>Systems Architect &amp; Low-Latency Engineer</h2>
 
         <div className='actions'>
           <MotionButton

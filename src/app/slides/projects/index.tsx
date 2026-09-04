@@ -1,9 +1,8 @@
 import { ExternalLink, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Button } from '@heroui/react';
+import { Button, Chip } from '@heroui/react';
 import { Slide } from '../../components/slide';
-import { GlassStack } from './components/stack';
-import { Tag } from './components/tag';
+import { ProjectCarousel } from './components/carousel';
 import { BootstrapIcon } from '../../components/icon';
 import { tapScale } from '../../lib/motion';
 
@@ -30,12 +29,12 @@ export function ProjectSlides() {
               <li><strong>Lighting & 3D Spatial</strong>: 60Hz DMX-512, Art-Net, sACN packet generation + real-time 60FPS Three.js WebGL visualizer.</li>
             </ul>
             <div className='tags'>
-              <Tag title='C++20' light='#00599c' />
-              <Tag title='JUCE 9' light='#000000' />
-              <Tag title='Lock-Free SPSC' light='#f59e0b' />
-              <Tag title='DMX-512 / Art-Net / sACN' light='#ef4444' />
-              <Tag title='Three.js WebGL' light='#049ef4' />
-              <Tag title='Electron / React 19' light='#61dafb' />
+              <Chip size='sm' variant='secondary'>C++20</Chip>
+              <Chip size='sm' variant='secondary'>JUCE 9</Chip>
+              <Chip size='sm' variant='secondary'>Lock-Free SPSC</Chip>
+              <Chip size='sm' variant='secondary'>DMX-512 / Art-Net / sACN</Chip>
+              <Chip size='sm' variant='secondary'>Three.js WebGL</Chip>
+              <Chip size='sm' variant='secondary'>Electron / React 19</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
@@ -50,12 +49,13 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <GlassStack
+            <ProjectCarousel
               images={[
                 '/projects/resostage/main.png',
                 '/projects/resostage/timeline.png',
                 '/projects/resostage/spatial.png'
               ]}
+              title='ResoStage'
             />
           </section>
         </div>
@@ -77,12 +77,12 @@ export function ProjectSlides() {
               <li><strong>Bare-Metal S3 Cluster</strong>: Distributed Linux MinIO storage cluster eliminating 70% of cloud data storage and egress expenses.</li>
             </ul>
             <div className='tags'>
-              <Tag title='NestJS / Fastify' light='#e0234e' />
-              <Tag title='Python (FastAPI)' light='#3776ab' />
-              <Tag title='vLLM / Ollama' light='#10b981' />
-              <Tag title='LangGraph' light='#6366f1' />
-              <Tag title='pgvector / PostgreSQL' light='#336791' />
-              <Tag title='Redis Streams' light='#dc382d' />
+              <Chip size='sm' variant='secondary'>NestJS / Fastify</Chip>
+              <Chip size='sm' variant='secondary'>Python (FastAPI)</Chip>
+              <Chip size='sm' variant='secondary'>vLLM / Ollama</Chip>
+              <Chip size='sm' variant='secondary'>LangGraph</Chip>
+              <Chip size='sm' variant='secondary'>pgvector / PostgreSQL</Chip>
+              <Chip size='sm' variant='secondary'>Redis Streams</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
@@ -97,12 +97,13 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <GlassStack
+            <ProjectCarousel
               images={[
                 '/projects/alchemy/main.png',
                 '/projects/alchemy/editor.png',
                 '/projects/alchemy/preview.png'
               ]}
+              title='Indago AI Platform'
             />
           </section>
         </div>
@@ -123,11 +124,11 @@ export function ProjectSlides() {
               <li><strong>Home Assistant Ecosystem</strong>: Full bidirectional MQTT talkback integration and dynamic port migration for high-density camera deployments.</li>
             </ul>
             <div className='tags'>
-              <Tag title='TypeScript' light='#3178c6' />
-              <Tag title='FFmpeg / C' light='#007808' />
-              <Tag title='RTSP / WebRTC' light='#4b0082' />
-              <Tag title='NVENC / QSV / VAAPI' light='#10b981' />
-              <Tag title='MQTT / Docker' light='#2496ed' />
+              <Chip size='sm' variant='secondary'>TypeScript</Chip>
+              <Chip size='sm' variant='secondary'>FFmpeg / C</Chip>
+              <Chip size='sm' variant='secondary'>RTSP / WebRTC</Chip>
+              <Chip size='sm' variant='secondary'>NVENC / QSV / VAAPI</Chip>
+              <Chip size='sm' variant='secondary'>MQTT / Docker</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
@@ -150,12 +151,11 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <GlassStack
+            <ProjectCarousel
               images={[
-                '/projects/scrypted-tuya/dashboard.png',
-                '/projects/scrypted-tuya/dashboard.png',
                 '/projects/scrypted-tuya/dashboard.png'
               ]}
+              title='Snappie & Scrypted Tuya Bridge'
             />
           </section>
         </div>
@@ -176,12 +176,12 @@ export function ProjectSlides() {
               <li><strong>Technical Rider Compiler</strong>: Compiles stage topologies into printable A4 stage plots, channel charts, and packing checklists via headless Puppeteer.</li>
             </ul>
             <div className='tags'>
-              <Tag title='libavoid-js (C++ WASM)' light='#654ff0' />
-              <Tag title='React 19 / TypeScript' light='#3178c6' />
-              <Tag title='@xyflow/react' light='#ff0055' />
-              <Tag title='HeroUI v3' light='#000000' />
-              <Tag title='NestJS / Fastify' light='#e0234e' />
-              <Tag title='Puppeteer' light='#00d8a2' />
+              <Chip size='sm' variant='secondary'>libavoid-js (C++ WASM)</Chip>
+              <Chip size='sm' variant='secondary'>React 19 / TypeScript</Chip>
+              <Chip size='sm' variant='secondary'>@xyflow/react</Chip>
+              <Chip size='sm' variant='secondary'>HeroUI v3</Chip>
+              <Chip size='sm' variant='secondary'>NestJS / Fastify</Chip>
+              <Chip size='sm' variant='secondary'>Puppeteer</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
@@ -196,12 +196,12 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <GlassStack
+            <ProjectCarousel
               images={[
                 '/projects/resopatch/main.png',
-                '/projects/resopatch/graph.png',
-                '/projects/resopatch/main.png'
+                '/projects/resopatch/graph.png'
               ]}
+              title='ResoPatch'
             />
           </section>
         </div>
@@ -222,11 +222,11 @@ export function ProjectSlides() {
               <li><strong>DSP Algorithms</strong>: Non-linear tape saturation, biquad filter topologies, and fractional sample interpolation.</li>
             </ul>
             <div className='tags'>
-              <Tag title='C++17 / C++20' light='#00599c' />
-              <Tag title='JUCE 8 / 9' light='#000000' />
-              <Tag title='VST3 / AU / Standalone' light='#f59e0b' />
-              <Tag title='DSP Time-Stretching' light='#10b981' />
-              <Tag title='Rotational Physics' light='#6366f1' />
+              <Chip size='sm' variant='secondary'>C++17 / C++20</Chip>
+              <Chip size='sm' variant='secondary'>JUCE 8 / 9</Chip>
+              <Chip size='sm' variant='secondary'>VST3 / AU / Standalone</Chip>
+              <Chip size='sm' variant='secondary'>DSP Time-Stretching</Chip>
+              <Chip size='sm' variant='secondary'>Rotational Physics</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
@@ -249,12 +249,12 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <GlassStack
+            <ProjectCarousel
               images={[
                 '/projects/scratcher/turntable.gif',
-                '/projects/scratcher/gui.png',
-                '/projects/scratcher/turntable.gif'
+                '/projects/scratcher/gui.png'
               ]}
+              title='Scratcher & Flopster'
             />
           </section>
         </div>
@@ -275,11 +275,11 @@ export function ProjectSlides() {
               <li><strong>Physical Prototyping</strong>: CNC-machined aluminum enclosure, footswitch debounce logic, low-noise power regulation, and responsive UI controls.</li>
             </ul>
             <div className='tags'>
-              <Tag title='Embedded C++' light='#00599c' />
-              <Tag title='Fixed-Point DSP' light='#10b981' />
-              <Tag title='ADC / DAC Memory Bus' light='#f59e0b' />
-              <Tag title='Hardware Interrupts' light='#ef4444' />
-              <Tag title='Hardware Prototyping' light='#6366f1' />
+              <Chip size='sm' variant='secondary'>Embedded C++</Chip>
+              <Chip size='sm' variant='secondary'>Fixed-Point DSP</Chip>
+              <Chip size='sm' variant='secondary'>ADC / DAC Memory Bus</Chip>
+              <Chip size='sm' variant='secondary'>Hardware Interrupts</Chip>
+              <Chip size='sm' variant='secondary'>Hardware Prototyping</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
@@ -302,26 +302,25 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <GlassStack
+            <ProjectCarousel
               images={[
-                '/projects/resobox/hardware.jpg',
-                '/projects/resobox/hardware.jpg',
                 '/projects/resobox/hardware.jpg'
               ]}
+              title='ResoBox'
             />
           </section>
         </div>
       </Slide>
 
       {/* Contact Section */}
-      <Slide className={'project-slide'}>
+      <Slide className={'project-slide contact-slide'}>
         <div className='slide-content' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           <span className='badge-category'>Get in Touch</span>
           <h3>Let's Build Systems Together</h3>
-          <p className='project-tagline' style={{ maxWidth: '500px' }}>
+          <p className='project-tagline' style={{ maxWidth: '520px', textAlign: 'center' }}>
             Available for Lead Backend, Systems Architecture, Low-Latency C++, and AI Platform roles in Canada & US Remote.
           </p>
-          <div className='project-actions' style={{ marginTop: '20px' }}>
+          <div className='project-actions' style={{ marginTop: '16px', justifyContent: 'center' }}>
             <MotionButton
               variant='primary'
               whileHover={{ y: -3 }}

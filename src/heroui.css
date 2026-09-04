@@ -79,3 +79,44 @@
   --warning: oklch(82.03% 0.1394 77.42);
   --warning-foreground: oklch(21.03% 0.0059 77.42);
 }
+
+/* Button overrides - 1:1 matching maria-portfolio (monochrome, no accent color) */
+.button--primary {
+  --button-bg: var(--foreground);
+  --button-fg: var(--background);
+  --button-bg-hover: color-mix(in oklch, var(--foreground) 88%, transparent);
+  --button-bg-pressed: color-mix(in oklch, var(--foreground) 78%, transparent);
+}
+
+.button--outline {
+  --button-border: var(--border);
+  --button-fg: var(--foreground);
+  --button-bg-hover: var(--default);
+}
+
+/* HeroUI Chip styling - crisp, minimal, zero glowing/blur halos */
+.chip {
+  font-size: 11.5px;
+  line-height: 1.4;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background-color: var(--surface-secondary);
+  color: var(--foreground);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.chip--secondary {
+  border-color: var(--border);
+  background-color: var(--surface-secondary);
+  color: var(--foreground);
+}
+
+.chip--secondary:hover {
+  background-color: var(--default);
+}
