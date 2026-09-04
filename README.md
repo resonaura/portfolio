@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+<img src="public/av.svg" width="64" height="64" alt="AV Logo" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Andrii Vynohradov — Personal Portfolio
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-18-61DAFB.svg?logo=react&logoColor=black)](package.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?logo=typescript&logoColor=white)](package.json)
+[![Vite](https://img.shields.io/badge/Bundler-Vite-646CFF.svg?logo=vite&logoColor=white)](package.json)
+[![WebGL / Three.js](https://img.shields.io/badge/Graphics-Three.js%20%7C%20GLSL-049EF4.svg?logo=three.js&logoColor=white)](package.json)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Interactive personal portfolio website featuring custom GLSL fluid shader effects, magnetic cursor physics, smooth presentation slides, and showcase of selected engineering and audio software projects.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ✨ Highlights
 
-- Configure the top-level `parserOptions` property like this:
+- 🌊 **Real-Time WebGL Shader**: Interactive water ripple and distortion effect powered by Three.js and custom GLSL uniforms.
+- 🎯 **Fluid Cursor Physics**: Custom iPadOS-style magnetic cursor with dynamic boundary snaps and physics.
+- 📜 **Presentation Slides Layout**: Responsive slide sections with scroll-driven offset transitions.
+- 🎨 **Minimal Modern Aesthetic**: Dark-themed typographic design with Scss modules and fluid layouts.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: React 18 & TypeScript
+- **Build Tool**: Vite (SWC)
+- **Styling**: SCSS, CSS Variables, Bootstrap Icons
+- **Graphics**: Three.js, Shader-Art, custom GLSL vertex/fragment shaders
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
