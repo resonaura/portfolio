@@ -11,7 +11,7 @@ export function Tag(props: ITag) {
   return (
     <div
       className='tag'
-      data-cursor='block'
+      
       style={
         {
           '--light': props.light

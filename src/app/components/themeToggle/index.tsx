@@ -11,7 +11,7 @@ export function ThemeToggle() {
     <motion.button
       type='button'
       className='theme-toggle'
-      data-cursor='block'
+      
       aria-label='Toggle theme'
       whileTap={tapScale}
       onClick={toggleTheme}

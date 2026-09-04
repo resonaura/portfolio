@@ -6,7 +6,7 @@ export interface ILink {
 }
 export function Link(props: ILink) {
   return (
-    <a data-cursor='block' className='link' href={props.link} target='_blank'>
+    <a  className='link' href={props.link} target='_blank'>
       {props.icon}
     </a>
   );

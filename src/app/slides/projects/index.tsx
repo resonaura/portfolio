@@ -111,7 +111,7 @@ export function ProjectSlides() {
           </section>
 
           <section>
-            <a data-cursor='block' href='mailto:andrii.vynohradov@gmail.com'>
+            <a  href='mailto:andrii.vynohradov@gmail.com'>
               <BootstrapIcon icon='envelope' />
               Contact me
             </a>

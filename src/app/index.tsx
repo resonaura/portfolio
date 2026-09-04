@@ -4,7 +4,6 @@ import { IntroSlide } from './slides/intro';
 import { AboutSlide } from './slides/about';
 import { useEffect, useState } from 'react';
 import { ProjectSlides } from './slides/projects';
-import { IpadProvider } from './components/ipadProvider';
 import { ThemeProvider } from './providers/theme';
 
 function App() {
@@ -24,14 +23,12 @@ function App() {
 
   return (
     <ThemeProvider>
-      <IpadProvider>
-        <Header />
-        <div className='slides'>
-          <IntroSlide {...{ scrollPosition }} />
-          <AboutSlide />
-          <ProjectSlides />
-        </div>
-      </IpadProvider>
+      <Header />
+      <div className='slides'>
+        <IntroSlide {...{ scrollPosition }} />
+        <AboutSlide />
+        <ProjectSlides />
+      </div>
     </ThemeProvider>
   );
 }

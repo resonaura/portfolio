@@ -37,7 +37,7 @@ export function Header() {
       <motion.button
         type='button'
         className='logo'
-        data-cursor='block'
+        
         whileHover={{ y: -2 }}
         whileTap={tapScale}
         onClick={scrollToTop}
@@ -47,7 +47,7 @@ export function Header() {
 
       <div className='actions'>
         <motion.a
-          data-cursor='block'
+          
           className='action-link'
           href='https://linkedin.com/in/resonaura'
           target='_blank'
@@ -60,7 +60,7 @@ export function Header() {
         </motion.a>
 
         <motion.a
-          data-cursor='block'
+          
           className='action-link'
           href='https://github.com/resonaura'
           target='_blank'
@@ -73,7 +73,7 @@ export function Header() {
         </motion.a>
 
         <motion.a
-          data-cursor='block'
+          
           className='action-link'
           href='mailto:andrii.vynohradov@gmail.com'
           aria-label='Email Andrii'

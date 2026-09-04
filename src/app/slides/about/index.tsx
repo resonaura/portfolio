@@ -1,54 +1,46 @@
-import { BootstrapIcon } from '../../components/icon';
+import { ExternalLink, Mail } from 'lucide-react';
 import { Slide } from '../../components/slide';
-
 import './index.scss';
 
 export function AboutSlide() {
   return (
     <Slide className={'about-slide'}>
       <div className='slide-content'>
-        <h2>🚀 About me</h2>
+        <h1>About me</h1>
+        <h2>Andrii Vynohradov</h2>
         <p>
-          I am a <strong>Full Stack Web Developer</strong> with over 5 years of
-          experience in creating scalable and efficient web applications. My
-          journey started with hobbyist game development, evolving into a career
-          focused on modern web technologies and user-centric solutions.
+          I have over <strong>8 years</strong> of commercial development
+          experience, starting my journey at <strong>14</strong>. Over the
+          years, I've worked on high-load projects, contributed to startups, and
+          developed my own products, gaining expertise across the full stack.
         </p>
 
         <p>
-          I specialize in the <strong>MERN</strong> and <strong>.NET</strong>{' '}
-          stacks, proficient in frameworks like React, Node.js, TypeScript, and
-          ASP.NET Core. My expertise includes developing AI-powered
-          applications, optimizing performance, and enhancing user experience
-          through design and functionality.
-        </p>
-
-        <p>
-          With a proven track record in mobile development using{' '}
-          <strong>React Native, Swift, and Kotlin</strong>, as well as PHP-based
-          solutions like Telegram bots, I have consistently delivered
+          Throughout my career, I've built and scaled solutions, architected
+          complex systems, and worked with diverse technologies, including{' '}
+          <strong>React</strong>, <strong>Node.js</strong>,{' '}
+          <strong>NestJS</strong>, <strong>TypeScript</strong>, and cloud
+          infrastructures. I take pride in writing clean, maintainable code,
+          optimizing performance, and continuously learning to deliver
           high-quality products for diverse platforms.
         </p>
 
         <p>
           Currently, I focus on building <strong>AI-driven solutions</strong>,
-          Chrome extensions, and leveraging modern development tools like
-          Webpack, Rollup, and Vite to create seamless and performant
-          applications.
+          distributed systems, real-time audio DSP, and high-performance applications.
         </p>
 
         <div className='actions'>
           <a
-            data-cursor='block'
+            className='btn-primary'
             target='_blank'
+            rel='noreferrer'
             href='https://cv.vynohradov.ca'
           >
-            <BootstrapIcon icon='box-arrow-up-right' />
-            My CV
+            My CV <ExternalLink size={16} />
           </a>
-          <a data-cursor='block' href='mailto:andrii.vynohradov@gmail.com'>
-            <BootstrapIcon icon='envelope' />
-            Contact me
+          <a className='btn-outline' href='mailto:andrii.vynohradov@gmail.com'>
+            Contact me <Mail size={16} />
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { BootstrapIcon } from '../../components/icon';
+import { ArrowRight } from 'lucide-react';
 import { Slide } from '../../components/slide';
 import ShaderArtComponent from '../../components/water';
 
@@ -30,17 +30,16 @@ export function IntroSlide(props: IIntroSlide) {
 
         <div className='actions'>
           <button
-            data-cursor='block'
+            className='btn-primary'
             onClick={() => handleScrollTo('first-project-slide')}
           >
-            See my projects <BootstrapIcon icon='arrow-right' />
+            See my projects <ArrowRight size={16} />
           </button>
           <button
-            data-cursor='block'
+            className='btn-outline'
             onClick={() => handleScrollTo('about-slide')}
           >
-            More about me
-            <BootstrapIcon icon='arrow-right' />
+            More about me <ArrowRight size={16} />
           </button>
         </div>
       </div>
