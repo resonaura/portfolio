@@ -321,7 +321,7 @@ export function ProjectSlides() {
       <Slide className={'project-slide more-projects-slide'}>
         <motion.div className='slide-content' {...contentMotion}>
           <Chip size='sm' variant='secondary'>More Projects & Open Source</Chip>
-          <h3>50+ More Projects on GitHub</h3>
+          <h3>30+ More Projects on GitHub</h3>
           <p className='project-tagline'>
             Explore the complete open-source archive: audio plugins, reverse-engineered IoT protocols, embedded firmware, and distributed systems.
           </p>
