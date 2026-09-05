@@ -317,7 +317,69 @@ export function ProjectSlides() {
         </motion.div>
       </Slide>
 
-      {/* 7. More Projects / GitHub Showcase */}
+      {/* 7. rsnra.link */}
+      <Slide className={'project-slide'}>
+        <motion.div className='slide-content' {...contentMotion}>
+          <section>
+            <span className='badge-category'>Interactive Web • Audio Streaming & Identity</span>
+            <h3>rsnra.link</h3>
+            <p className='project-tagline'>
+              Hybrid music ecosystem combining high-fidelity direct audio streaming, interactive band storytelling, and unified identity.
+            </p>
+            <ul className='project-bullets'>
+              <li><strong>High-Fidelity Audio Engine</strong>: Direct in-browser losslessly streamed audio player with dynamic queue management, waveform telemetry, and seamless track transitions.</li>
+              <li><strong>Interactive Visual Storytelling</strong>: Atmospheric canvas aesthetics, retro Win95 digital desktop counterpart (rsnra.art), and unified smart release links.</li>
+              <li><strong>Microservice Architecture</strong>: Engineered with NestJS, Fastify, Docker, and Redis caching for instant global delivery with high concurrent listener capacity.</li>
+            </ul>
+            <div className='tags'>
+              <Chip size='sm' variant='secondary'>React 19 / Vite</Chip>
+              <Chip size='sm' variant='secondary'>TypeScript</Chip>
+              <Chip size='sm' variant='secondary'>NestJS / Fastify</Chip>
+              <Chip size='sm' variant='secondary'>Audio Streaming</Chip>
+              <Chip size='sm' variant='secondary'>OAuth / SSO</Chip>
+              <Chip size='sm' variant='secondary'>Redis / Docker</Chip>
+            </div>
+            <div className='project-actions'>
+              <MotionButton
+                variant='primary'
+                whileHover={{ y: -2 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://rsnra.link', '_blank')}
+              >
+                rsnra.link <ExternalLink size={14} />
+              </MotionButton>
+              <MotionButton
+                variant='outline'
+                whileHover={{ y: -2 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://rsnra.art', '_blank')}
+              >
+                rsnra.art <ExternalLink size={14} />
+              </MotionButton>
+              <MotionButton
+                variant='outline'
+                whileHover={{ y: -2 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://github.com/resonaura/rsnra-art', '_blank')}
+              >
+                GitHub Repo <ExternalLink size={14} />
+              </MotionButton>
+            </div>
+          </section>
+
+          <section>
+            <ProjectCarousel
+              images={[
+                '/projects/rsnra/main.png',
+                '/projects/rsnra/art.png'
+              ]}
+              title='rsnra.link'
+            />
+          </section>
+        </motion.div>
+      </Slide>
+
+      {/* 8. More Projects / GitHub Showcase */}
       <Slide className={'project-slide more-projects-slide'}>
         <motion.div className='slide-content' {...contentMotion}>
           <Chip size='sm' variant='secondary'>More Projects & Open Source</Chip>
@@ -330,7 +392,7 @@ export function ProjectSlides() {
               variant='primary'
               whileHover={{ y: -3 }}
               whileTap={tapScale}
-              onPress={() => window.open('https://github.com/resonaura?tab=repositories', '_blank')}
+              onPress={() => window.open('https://github.com/resonaura', '_blank')}
             >
               View all on GitHub <ExternalLink size={16} />
             </MotionButton>

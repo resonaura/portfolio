@@ -21,11 +21,16 @@
           var stored = localStorage.getItem('vynohradov-portfolio-theme');
           var theme = (stored === 'light' || stored === 'dark') ? stored : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
           document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme;
           if (theme === 'dark') {
             document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
           } else {
+            document.documentElement.classList.add('light');
             document.documentElement.classList.remove('dark');
           }
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
         } catch (e) {}
       })();
     </script>

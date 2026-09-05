@@ -5,22 +5,23 @@
 .default,
 [data-theme="light"],
 [data-theme="default"] {
+  color-scheme: light;
   /* Theme Colors (Light Mode) */
   --accent: oklch(52.82% 0.2628 262.87);
-  --accent-foreground: oklch(99.11% 0 0);
-  --background: oklch(97.02% 0.0020 262.87);
+  --accent-foreground: #ffffff;
+  --background: #ffffff;
   --border: oklch(90.00% 0.0020 262.87);
   --danger: oklch(65.32% 0.2337 26.82);
-  --danger-foreground: oklch(99.11% 0 0);
+  --danger-foreground: #ffffff;
   --default: oklch(94.00% 0.0020 262.87);
-  --default-foreground: oklch(21.03% 0.0059 262.87);
-  --field-background: oklch(100.00% 0.0010 262.87);
+  --default-foreground: #17171a;
+  --field-background: #ffffff;
   --field-border: transparent;
-  --field-foreground: oklch(21.03% 0.0020 262.87);
-  --field-placeholder: oklch(55.17% 0.0040 262.87);
+  --field-foreground: #17171a;
+  --field-placeholder: #767680;
   --focus: oklch(52.82% 0.2628 262.87);
-  --foreground: oklch(21.03% 0.0020 262.87);
-  --muted: oklch(55.17% 0.0040 262.87);
+  --foreground: #17171a;
+  --muted: #66666e;
   --overlay: oklch(100.00% 0.0006 262.87);
   --overlay-foreground: oklch(21.03% 0.0020 262.87);
   --scrollbar: oklch(87.10% 0.0020 262.87);
@@ -48,20 +49,20 @@
   color-scheme: dark;
   /* Theme Colors (Dark Mode) */
   --accent: oklch(52.82% 0.2628 262.87);
-  --accent-foreground: oklch(99.11% 0 0);
-  --background: oklch(12.00% 0.0020 262.87);
+  --accent-foreground: #ffffff;
+  --background: #000000;
   --border: oklch(28.00% 0.0020 262.87);
   --danger: oklch(59.40% 0.1975 25.71);
-  --danger-foreground: oklch(99.11% 0 0);
+  --danger-foreground: #ffffff;
   --default: oklch(27.40% 0.0020 262.87);
-  --default-foreground: oklch(99.11% 0 0);
+  --default-foreground: #ffffff;
   --field-background: oklch(21.03% 0.0040 262.87);
   --field-border: transparent;
-  --field-foreground: oklch(99.11% 0.0020 262.87);
-  --field-placeholder: oklch(70.50% 0.0040 262.87);
+  --field-foreground: #ffffff;
+  --field-placeholder: #a0a0aa;
   --focus: oklch(52.82% 0.2628 262.87);
-  --foreground: oklch(99.11% 0.0020 262.87);
-  --muted: oklch(70.50% 0.0040 262.87);
+  --foreground: #f5f5f5;
+  --muted: rgba(245, 245, 245, 0.65);
   --overlay: oklch(21.03% 0.0040 262.87);
   --overlay-foreground: oklch(99.11% 0.0020 262.87);
   --scrollbar: oklch(70.50% 0.0020 262.87);

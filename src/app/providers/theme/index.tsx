@@ -17,6 +17,13 @@ function getStoredTheme(): Theme | null {
 function applyTheme(theme: Theme) {
   document.documentElement.setAttribute('data-theme', theme);
   document.documentElement.classList.toggle('dark', theme === 'dark');
+  document.documentElement.classList.toggle('light', theme === 'light');
+  document.documentElement.style.colorScheme = theme;
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor) {
+    metaThemeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
+  }
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
