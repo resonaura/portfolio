@@ -162,8 +162,7 @@ export function ProjectSlides() {
             <ProjectCarousel
               images={[
                 '/projects/scrypted-tuya/tuya-1.png',
-                '/projects/scrypted-tuya/tuya-2.png',
-                '/projects/scrypted-tuya/dashboard.png'
+                '/projects/scrypted-tuya/tuya-2.png'
               ]}
               title='Snappie & Scrypted Tuya Bridge'
             />
@@ -209,9 +208,7 @@ export function ProjectSlides() {
             <ProjectCarousel
               images={[
                 '/projects/resopatch/rp-1.png',
-                '/projects/resopatch/rp-2.png',
-                '/projects/resopatch/resopatch.png',
-                '/projects/resopatch/resopatch-stagebox.png'
+                '/projects/resopatch/rp-2.png'
               ]}
               title='ResoPatch'
             />
@@ -265,7 +262,6 @@ export function ProjectSlides() {
               images={[
                 '/projects/scratcher/turntable.gif',
                 '/projects/scratcher/gui.png',
-                '/projects/scratcher/f-1.png',
                 '/projects/scratcher/f-2.png',
                 '/projects/scratcher/f-3.png',
                 '/projects/scratcher/f-4.png',
@@ -324,9 +320,7 @@ export function ProjectSlides() {
             <ProjectCarousel
               images={[
                 '/projects/resobox/resobox-proto.jpg',
-                '/projects/resobox/resobox-virtual-pedal-concept.jpg',
-                '/projects/resobox/resobox-dev-ui.jpg',
-                '/projects/resobox/hardware.jpg'
+                '/projects/resobox/resobox-dev-ui.jpg'
               ]}
               title='ResoBox'
               fit='cover'

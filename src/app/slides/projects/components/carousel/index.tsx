@@ -109,45 +109,45 @@ export function ProjectCarousel({ images, title, fit = 'contain' }: IProjectCaro
             />
           </motion.div>
         </AnimatePresence>
-
-        {isMultiple && (
-          <>
-            <motion.button
-              type='button'
-              className='carousel-control prev'
-              aria-label='Previous slide'
-              whileHover={{ scale: 1.08 }}
-              whileTap={tapScale}
-              onClick={() => paginate(-1)}
-            >
-              <ChevronLeft size={18} />
-            </motion.button>
-
-            <motion.button
-              type='button'
-              className='carousel-control next'
-              aria-label='Next slide'
-              whileHover={{ scale: 1.08 }}
-              whileTap={tapScale}
-              onClick={() => paginate(1)}
-            >
-              <ChevronRight size={18} />
-            </motion.button>
-
-            <div className='carousel-dots'>
-              {images.map((_, idx) => (
-                <button
-                  key={idx}
-                  type='button'
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`carousel-dot ${idx === currentIndex ? 'active' : ''}`}
-                  onClick={() => jumpTo(idx)}
-                />
-              ))}
-            </div>
-          </>
-        )}
       </div>
+
+      {isMultiple && (
+        <>
+          <motion.button
+            type='button'
+            className='carousel-control prev'
+            aria-label='Previous slide'
+            whileHover={{ scale: 1.08 }}
+            whileTap={tapScale}
+            onClick={() => paginate(-1)}
+          >
+            <ChevronLeft size={18} />
+          </motion.button>
+
+          <motion.button
+            type='button'
+            className='carousel-control next'
+            aria-label='Next slide'
+            whileHover={{ scale: 1.08 }}
+            whileTap={tapScale}
+            onClick={() => paginate(1)}
+          >
+            <ChevronRight size={18} />
+          </motion.button>
+
+          <div className='carousel-dots'>
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                type='button'
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`carousel-dot ${idx === currentIndex ? 'active' : ''}`}
+                onClick={() => jumpTo(idx)}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
