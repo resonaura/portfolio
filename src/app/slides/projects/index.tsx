@@ -409,51 +409,56 @@ export function ProjectSlides() {
           <p className='project-tagline'>
             Available for Lead Backend, Systems Architecture, Low-Latency C++, and AI Platform roles in Canada & US Remote.
           </p>
-          <div className='project-actions'>
-            <MotionButton
-              variant='primary'
-              whileHover={{ y: -3 }}
-              whileTap={tapScale}
-              onPress={() => window.location.href = 'mailto:andrii.vynohradov@gmail.com'}
-            >
-              <Mail size={16} /> Contact Me
-            </MotionButton>
-            <MotionButton
-              variant='outline'
-              whileHover={{ y: -3 }}
-              whileTap={tapScale}
-              onPress={() => window.open('https://buymeacoffee.com/resonaura', '_blank')}
-            >
-              <BuyMeACoffeeIcon size={16} /> Buy Me a Coffee
-            </MotionButton>
-            <MotionButton
-              variant='outline'
-              whileHover={{ y: -3 }}
-              whileTap={tapScale}
-              onPress={() => window.open('https://raw.githubusercontent.com/resonaura/resonaura/main/cv.pdf', '_blank')}
-            >
-              Download CV <ExternalLink size={16} />
-            </MotionButton>
-            <MotionButton
-              isIconOnly
-              variant='outline'
-              aria-label='LinkedIn'
-              whileHover={{ y: -3 }}
-              whileTap={tapScale}
-              onPress={() => window.open('https://linkedin.com/in/resonaura', '_blank')}
-            >
-              <LinkedinIcon size={16} />
-            </MotionButton>
-            <MotionButton
-              isIconOnly
-              variant='outline'
-              aria-label='GitHub'
-              whileHover={{ y: -3 }}
-              whileTap={tapScale}
-              onPress={() => window.open('https://github.com/resonaura', '_blank')}
-            >
-              <GithubIcon size={16} />
-            </MotionButton>
+          <div className='contact-actions-wrapper'>
+            <div className='project-actions'>
+              <MotionButton
+                variant='primary'
+                whileHover={{ y: -3 }}
+                whileTap={tapScale}
+                onPress={() => window.location.href = 'mailto:andrii.vynohradov@gmail.com'}
+              >
+                <Mail size={16} /> Contact Me
+              </MotionButton>
+              <MotionButton
+                variant='outline'
+                whileHover={{ y: -3 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://raw.githubusercontent.com/resonaura/resonaura/main/cv.pdf', '_blank')}
+              >
+                Download CV <ExternalLink size={16} />
+              </MotionButton>
+            </div>
+
+            <div className='project-actions'>
+              <MotionButton
+                variant='outline'
+                whileHover={{ y: -3 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://buymeacoffee.com/resonaura', '_blank')}
+              >
+                <BuyMeACoffeeIcon size={16} /> Buy Me a Coffee
+              </MotionButton>
+              <MotionButton
+                isIconOnly
+                variant='outline'
+                aria-label='LinkedIn'
+                whileHover={{ y: -3 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://linkedin.com/in/resonaura', '_blank')}
+              >
+                <LinkedinIcon size={16} />
+              </MotionButton>
+              <MotionButton
+                isIconOnly
+                variant='outline'
+                aria-label='GitHub'
+                whileHover={{ y: -3 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://github.com/resonaura', '_blank')}
+              >
+                <GithubIcon size={16} />
+              </MotionButton>
+            </div>
           </div>
         </motion.div>
       </Slide>
