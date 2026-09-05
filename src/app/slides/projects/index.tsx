@@ -54,9 +54,12 @@ export function ProjectSlides() {
           <section>
             <ProjectCarousel
               images={[
-                '/projects/resostage/main.png',
-                '/projects/resostage/timeline.png',
-                '/projects/resostage/spatial.png'
+                '/projects/resostage/rs-1.png',
+                '/projects/resostage/rs-2.png',
+                '/projects/resostage/rs-3.png',
+                '/projects/resostage/rs-4.png',
+                '/projects/resostage/rs-5.png',
+                '/projects/resostage/rs-6.png'
               ]}
               title='ResoStage'
             />
@@ -103,9 +106,9 @@ export function ProjectSlides() {
           <section>
             <ProjectCarousel
               images={[
-                '/projects/alchemy/main.png',
-                '/projects/alchemy/editor.png',
-                '/projects/alchemy/preview.png'
+                '/projects/alchemy/1.png',
+                '/projects/alchemy/2.png',
+                '/projects/alchemy/3.png'
               ]}
               title='Alchemy & AI Systems'
             />
@@ -117,17 +120,18 @@ export function ProjectSlides() {
       <Slide className={'project-slide'}>
         <motion.div className='slide-content' {...contentMotion}>
           <section>
-            <span className='badge-category'>Edge Video Pipelines • Hardware Transcoding</span>
+            <span className='badge-category'>Low-Latency C++ / TS • Hardware Transcoding</span>
             <h3>Snappie & Tuya Bridge</h3>
             <p className='project-tagline'>
-              Sub-second RTSP/WebRTC demuxer and frame ingestion server with hardware-accelerated transcoding pipelines.
+              Sub-second RTSP/WebRTC demuxer and frame ingestion server with native C++20 zero-copy packet relay and hardware-accelerated transcoding pipelines.
             </p>
             <ul className='project-bullets'>
-              <li><strong>Sub-Second Stream Relay</strong>: Demuxes proprietary camera WebRTC feeds into local RTSP streams with zero-copy packet relay and no cloud dependencies.</li>
-              <li><strong>Hardware Acceleration</strong>: Zero-disk in-memory ring buffers supporting NVENC/CUDA, Intel VA-API/QSV, and Apple VideoToolbox.</li>
+              <li><strong>Native C++20 Stream Core</strong>: Demuxes proprietary camera WebRTC feeds into local RTSP streams with zero-copy packet relay, SIMD-accelerated memory pipelines, and no cloud dependencies.</li>
+              <li><strong>Hardware Acceleration</strong>: Zero-disk in-memory ring buffers supporting NVENC/CUDA, Intel VA-API/QSV, and Apple VideoToolbox via custom C/C++ FFmpeg bindings.</li>
               <li><strong>Home Assistant Ecosystem</strong>: Full bidirectional MQTT talkback integration and dynamic port migration for high-density camera deployments.</li>
             </ul>
             <div className='tags'>
+              <Chip size='sm' variant='secondary'>C++20</Chip>
               <Chip size='sm' variant='secondary'>TypeScript</Chip>
               <Chip size='sm' variant='secondary'>FFmpeg / C</Chip>
               <Chip size='sm' variant='secondary'>RTSP / WebRTC</Chip>
@@ -157,6 +161,8 @@ export function ProjectSlides() {
           <section>
             <ProjectCarousel
               images={[
+                '/projects/scrypted-tuya/tuya-1.png',
+                '/projects/scrypted-tuya/tuya-2.png',
                 '/projects/scrypted-tuya/dashboard.png'
               ]}
               title='Snappie & Scrypted Tuya Bridge'
@@ -202,8 +208,10 @@ export function ProjectSlides() {
           <section>
             <ProjectCarousel
               images={[
-                '/projects/resopatch/main.png',
-                '/projects/resopatch/graph.png'
+                '/projects/resopatch/rp-1.png',
+                '/projects/resopatch/rp-2.png',
+                '/projects/resopatch/resopatch.png',
+                '/projects/resopatch/resopatch-stagebox.png'
               ]}
               title='ResoPatch'
             />
@@ -256,7 +264,14 @@ export function ProjectSlides() {
             <ProjectCarousel
               images={[
                 '/projects/scratcher/turntable.gif',
-                '/projects/scratcher/gui.png'
+                '/projects/scratcher/gui.png',
+                '/projects/scratcher/f-1.png',
+                '/projects/scratcher/f-2.png',
+                '/projects/scratcher/f-3.png',
+                '/projects/scratcher/f-4.png',
+                '/projects/scratcher/f-6.png',
+                '/projects/scratcher/f-7.png',
+                '/projects/scratcher/f-9.png'
               ]}
               title='Scratcher & Flopster'
             />
@@ -308,6 +323,9 @@ export function ProjectSlides() {
           <section>
             <ProjectCarousel
               images={[
+                '/projects/resobox/resobox-proto.jpg',
+                '/projects/resobox/resobox-virtual-pedal-concept.jpg',
+                '/projects/resobox/resobox-dev-ui.jpg',
                 '/projects/resobox/hardware.jpg'
               ]}
               title='ResoBox'
@@ -370,8 +388,13 @@ export function ProjectSlides() {
           <section>
             <ProjectCarousel
               images={[
-                '/projects/rsnra/main.png',
-                '/projects/rsnra/art.png'
+                '/projects/rsnra/r-1.png',
+                '/projects/rsnra/r-2.png',
+                '/projects/rsnra/r-3.png',
+                '/projects/rsnra/r-4.png',
+                '/projects/rsnra/art-1.png',
+                '/projects/rsnra/art-2.png',
+                '/projects/rsnra/art-3.png'
               ]}
               title='rsnra.link'
             />

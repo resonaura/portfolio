@@ -40,13 +40,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--app-background);
+  background-color: transparent;
   color: var(--app-text);
-}
-
-#root,
-.slides {
-  background-color: var(--app-background);
 }
 
 ::-webkit-scrollbar {
