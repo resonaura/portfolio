@@ -290,16 +290,17 @@ export function ProjectSlides() {
               Standalone real-time audio appliance and custom hardware guitar pedalboard built on Raspberry Pi, HiFiBerry studio I/O, and custom low-latency Alpine Linux.
             </p>
             <ul className='project-bullets'>
-              <li><strong>Raspberry Pi + HiFiBerry Audio HAT</strong>: Studio-grade DAC/ADC hardware connected over I2S bus with dedicated low-jitter clock crystals for ultra-low roundtrip latency.</li>
-              <li><strong>Custom Alpine Linux System</strong>: Stripped-down, minimal Alpine build specifically configured for real-time audio scheduling, zero background overhead, and rock-solid boot reliability.</li>
-              <li><strong>C++ Audio DSP Core</strong>: Native audio engine executing zero-allocation processing loops directly on ALSA, paired with a lightweight web/hardware companion UI for patch management.</li>
+              <li><strong>Raspberry Pi + HiFiBerry Sound Card</strong>: High-fidelity I2S DAC/ADC audio HAT with studio-grade Burr-Brown converters delivering low-latency audio capture and playback directly on Raspberry Pi.</li>
+              <li><strong>Custom Alpine Linux Build</strong>: Minimalist, stripped-down Alpine Linux distribution engineered specifically for real-time low-latency audio performance with JACK Audio Connection Kit and fast cold boot.</li>
+              <li><strong>Python DSP Core &amp; Web Companion</strong>: Modular real-time DSP engine (<code>resobox-core</code>) built on Python with Spotify Pedalboard, sounddevice/JACK, and moving-average RMS telemetry, paired with a React 18 / TypeScript control interface (<code>resobox-ui</code>).</li>
             </ul>
             <div className='tags'>
               <Chip size='sm' variant='secondary'>Raspberry Pi</Chip>
               <Chip size='sm' variant='secondary'>HiFiBerry DAC/ADC</Chip>
-              <Chip size='sm' variant='secondary'>Alpine Linux</Chip>
-              <Chip size='sm' variant='secondary'>C++ Audio DSP</Chip>
-              <Chip size='sm' variant='secondary'>ALSA / Linux Audio</Chip>
+              <Chip size='sm' variant='secondary'>Alpine Linux (RT Audio)</Chip>
+              <Chip size='sm' variant='secondary'>JACK Audio Kit</Chip>
+              <Chip size='sm' variant='secondary'>Python / Pedalboard DSP</Chip>
+              <Chip size='sm' variant='secondary'>React 18 / TypeScript</Chip>
               <Chip size='sm' variant='secondary'>Hardware Prototype</Chip>
             </div>
             <div className='project-actions'>
