@@ -284,22 +284,23 @@ export function ProjectSlides() {
       <Slide className={'project-slide is-reversed'}>
         <motion.div className='slide-content' {...contentMotion}>
           <section>
-            <span className='badge-category'>Embedded Silicon • Physical Hardware</span>
+            <span className='badge-category'>Embedded Linux • Custom Audio Appliance</span>
             <h3>ResoBox</h3>
             <p className='project-tagline'>
-              Embedded real-time audio appliance and custom hardware guitar pedalboard powered by a dedicated low-latency DSP unit.
+              Standalone real-time audio appliance and custom hardware guitar pedalboard built on Raspberry Pi, HiFiBerry studio I/O, and custom low-latency Alpine Linux.
             </p>
             <ul className='project-bullets'>
-              <li><strong>Embedded DSP Engine</strong>: Executes fixed-point digital filtering with hardware interrupts and zero-allocation processing loops.</li>
-              <li><strong>Direct Memory Bus</strong>: High-speed ADC/DAC communication bus minimizing roundtrip latency from guitar input to stage output.</li>
-              <li><strong>Physical Prototyping</strong>: CNC-machined aluminum enclosure, footswitch debounce logic, low-noise power regulation, and responsive UI controls.</li>
+              <li><strong>Raspberry Pi + HiFiBerry Audio HAT</strong>: Studio-grade DAC/ADC hardware connected over I2S bus with dedicated low-jitter clock crystals for ultra-low roundtrip latency.</li>
+              <li><strong>Custom Alpine Linux System</strong>: Stripped-down, minimal Alpine build specifically configured for real-time audio scheduling, zero background overhead, and rock-solid boot reliability.</li>
+              <li><strong>C++ Audio DSP Core</strong>: Native audio engine executing zero-allocation processing loops directly on ALSA, paired with a lightweight web/hardware companion UI for patch management.</li>
             </ul>
             <div className='tags'>
-              <Chip size='sm' variant='secondary'>Embedded C++</Chip>
-              <Chip size='sm' variant='secondary'>Fixed-Point DSP</Chip>
-              <Chip size='sm' variant='secondary'>ADC / DAC Memory Bus</Chip>
-              <Chip size='sm' variant='secondary'>Hardware Interrupts</Chip>
-              <Chip size='sm' variant='secondary'>Hardware Prototyping</Chip>
+              <Chip size='sm' variant='secondary'>Raspberry Pi</Chip>
+              <Chip size='sm' variant='secondary'>HiFiBerry DAC/ADC</Chip>
+              <Chip size='sm' variant='secondary'>Alpine Linux</Chip>
+              <Chip size='sm' variant='secondary'>C++ Audio DSP</Chip>
+              <Chip size='sm' variant='secondary'>ALSA / Linux Audio</Chip>
+              <Chip size='sm' variant='secondary'>Hardware Prototype</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
