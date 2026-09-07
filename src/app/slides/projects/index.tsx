@@ -1,4 +1,4 @@
-import { ExternalLink, Mail, Lock } from 'lucide-react';
+import { ExternalLink, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button, Chip } from '@heroui/react';
 import { Slide } from '../../components/slide';
@@ -45,9 +45,14 @@ export function ProjectSlides() {
               <Chip size='sm' variant='secondary'>Electron / React 19</Chip>
             </div>
             <div className='project-actions'>
-              <Chip size='md' variant='secondary' className='cursor-default opacity-85'>
-                <Lock size={13} style={{ display: 'inline', marginRight: 6 }} /> Private Codebase
-              </Chip>
+              <MotionButton
+                variant='primary'
+                whileHover={{ y: -2 }}
+                whileTap={tapScale}
+                onPress={() => window.open('https://github.com/resonaura/resostage', '_blank')}
+              >
+                GitHub Repo <ExternalLink size={14} />
+              </MotionButton>
             </div>
           </section>
 
