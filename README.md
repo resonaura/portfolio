@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/resonaura/portfolio/main/public/av.svg" width="64" height="64" alt="AV Logo" />
+<img src="https://raw.githubusercontent.com/resonaura/portfolio/main/public/av.svg" width="64" alt="AV Logo" />
 
 # Andrii Vynohradov — Personal Portfolio
 
