@@ -1,0 +1,19 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: [self-hosted, linux]
+    steps:
+      - name: Update & Restart Service
+        run: |
+          cd /home/resonaura/apps/portfolio
+          git pull
+          pnpm build
+          pm2 restart portfolio
