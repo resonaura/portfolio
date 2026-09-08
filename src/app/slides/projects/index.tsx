@@ -351,12 +351,12 @@ export function ProjectSlides() {
               <li><strong>Microservice Architecture</strong>: Engineered with NestJS, Fastify, Docker, and Redis caching for instant global delivery with high concurrent listener capacity.</li>
             </ul>
             <div className='tags'>
-              <Chip size='sm' variant='secondary'>React 19 / Vite</Chip>
+              <Chip size='sm' variant='secondary'>Next.js 16 / React 19</Chip>
               <Chip size='sm' variant='secondary'>TypeScript</Chip>
               <Chip size='sm' variant='secondary'>NestJS / Fastify</Chip>
+              <Chip size='sm' variant='secondary'>Tailwind v4 / shadcn</Chip>
               <Chip size='sm' variant='secondary'>Audio Streaming</Chip>
               <Chip size='sm' variant='secondary'>OAuth / SSO</Chip>
-              <Chip size='sm' variant='secondary'>Redis / Docker</Chip>
             </div>
             <div className='project-actions'>
               <MotionButton
